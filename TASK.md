@@ -74,6 +74,13 @@ This document breaks down the development process into EPICs and individual task
 - [x] Define configuration interfaces
 
 ### 2.2 Exception Hierarchy
+- [x] Create base OpenRouterException class
+- [x] Define AuthenticationException
+- [x] Create RateLimitException
+- [x] Define ApiException with error details
+- [x] Create TimeoutException
+- [x] Define NetworkException
+- [x] Create SerializationException
 - [ ] Create base OpenRouterException class
 - [ ] Define AuthenticationException
 - [ ] Create RateLimitException

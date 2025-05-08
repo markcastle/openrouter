@@ -138,4 +138,120 @@ namespace OpenRouter.Abstractions.Tests
             Assert.Equal(inner, ex.InnerException);
         }
     }
+
+    /// <summary>
+    /// Tests for OpenRouterRateLimitException.
+    /// </summary>
+    public class OpenRouterRateLimitExceptionTests
+    {
+        [Fact]
+        public void DefaultConstructor_ShouldCreateInstance()
+        {
+            var ex = new OpenRouterRateLimitException();
+            Assert.NotNull(ex);
+        }
+
+        [Fact]
+        public void MessageConstructor_ShouldSetMessage()
+        {
+            var ex = new OpenRouterRateLimitException("rate limit");
+            Assert.Equal("rate limit", ex.Message);
+        }
+
+        [Fact]
+        public void InnerExceptionConstructor_ShouldSetInnerException()
+        {
+            var inner = new Exception("inner");
+            var ex = new OpenRouterRateLimitException("rate limit", inner);
+            Assert.Equal("rate limit", ex.Message);
+            Assert.Equal(inner, ex.InnerException);
+        }
+    }
+
+    /// <summary>
+    /// Tests for OpenRouterTimeoutException.
+    /// </summary>
+    public class OpenRouterTimeoutExceptionTests
+    {
+        [Fact]
+        public void DefaultConstructor_ShouldCreateInstance()
+        {
+            var ex = new OpenRouterTimeoutException();
+            Assert.NotNull(ex);
+        }
+
+        [Fact]
+        public void MessageConstructor_ShouldSetMessage()
+        {
+            var ex = new OpenRouterTimeoutException("timeout");
+            Assert.Equal("timeout", ex.Message);
+        }
+
+        [Fact]
+        public void InnerExceptionConstructor_ShouldSetInnerException()
+        {
+            var inner = new Exception("inner");
+            var ex = new OpenRouterTimeoutException("timeout", inner);
+            Assert.Equal("timeout", ex.Message);
+            Assert.Equal(inner, ex.InnerException);
+        }
+    }
+
+    /// <summary>
+    /// Tests for OpenRouterNetworkException.
+    /// </summary>
+    public class OpenRouterNetworkExceptionTests
+    {
+        [Fact]
+        public void DefaultConstructor_ShouldCreateInstance()
+        {
+            var ex = new OpenRouterNetworkException();
+            Assert.NotNull(ex);
+        }
+
+        [Fact]
+        public void MessageConstructor_ShouldSetMessage()
+        {
+            var ex = new OpenRouterNetworkException("network");
+            Assert.Equal("network", ex.Message);
+        }
+
+        [Fact]
+        public void InnerExceptionConstructor_ShouldSetInnerException()
+        {
+            var inner = new Exception("inner");
+            var ex = new OpenRouterNetworkException("network", inner);
+            Assert.Equal("network", ex.Message);
+            Assert.Equal(inner, ex.InnerException);
+        }
+    }
+
+    /// <summary>
+    /// Tests for OpenRouterSerializationException.
+    /// </summary>
+    public class OpenRouterSerializationExceptionTests
+    {
+        [Fact]
+        public void DefaultConstructor_ShouldCreateInstance()
+        {
+            var ex = new OpenRouterSerializationException();
+            Assert.NotNull(ex);
+        }
+
+        [Fact]
+        public void MessageConstructor_ShouldSetMessage()
+        {
+            var ex = new OpenRouterSerializationException("serialization");
+            Assert.Equal("serialization", ex.Message);
+        }
+
+        [Fact]
+        public void InnerExceptionConstructor_ShouldSetInnerException()
+        {
+            var inner = new Exception("inner");
+            var ex = new OpenRouterSerializationException("serialization", inner);
+            Assert.Equal("serialization", ex.Message);
+            Assert.Equal(inner, ex.InnerException);
+        }
+    }
 }

@@ -207,4 +207,101 @@ namespace OpenRouter.Abstractions
         /// <param name="innerException">The exception that is the cause of the current exception.</param>
         public OpenRouterAuthenticationException(string message, Exception innerException) : base(message, innerException) { }
     }
+
+    /// <summary>
+    /// Represents errors that occur when the API rate limit is exceeded.
+    /// </summary>
+    public class OpenRouterRateLimitException : OpenRouterException
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterRateLimitException"/> class.
+        /// </summary>
+        public OpenRouterRateLimitException() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterRateLimitException"/> class with a specified error message.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        public OpenRouterRateLimitException(string message) : base(message) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterRateLimitException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        /// <param name="innerException">The exception that is the cause of the current exception.</param>
+        public OpenRouterRateLimitException(string message, Exception innerException) : base(message, innerException) { }
+    }
+
+    /// <summary>
+    /// Represents errors that occur when an API request times out.
+    /// </summary>
+    public class OpenRouterTimeoutException : OpenRouterException
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterTimeoutException"/> class.
+        /// </summary>
+        public OpenRouterTimeoutException() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterTimeoutException"/> class with a specified error message.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        public OpenRouterTimeoutException(string message) : base(message) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterTimeoutException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        /// <param name="innerException">The exception that is the cause of the current exception.</param>
+        public OpenRouterTimeoutException(string message, Exception innerException) : base(message, innerException) { }
+    }
+
+    /// <summary>
+    /// Represents errors that occur due to network issues during API operations.
+    /// </summary>
+    public class OpenRouterNetworkException : OpenRouterException
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterNetworkException"/> class.
+        /// </summary>
+        public OpenRouterNetworkException() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterNetworkException"/> class with a specified error message.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        public OpenRouterNetworkException(string message) : base(message) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterNetworkException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        /// <param name="innerException">The exception that is the cause of the current exception.</param>
+        public OpenRouterNetworkException(string message, Exception innerException) : base(message, innerException) { }
+    }
+
+    /// <summary>
+    /// Represents errors that occur during serialization or deserialization of API models.
+    /// </summary>
+    public class OpenRouterSerializationException : OpenRouterException
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterSerializationException"/> class.
+        /// </summary>
+        public OpenRouterSerializationException() { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterSerializationException"/> class with a specified error message.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        public OpenRouterSerializationException(string message) : base(message) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterSerializationException"/> class with a specified error message and a reference to the inner exception that is the cause of this exception.
+        /// </summary>
+        /// <param name="message">The message that describes the error.</param>
+        /// <param name="innerException">The exception that is the cause of the current exception.</param>
+        public OpenRouterSerializationException(string message, Exception innerException) : base(message, innerException) { }
+    }
 }
+
