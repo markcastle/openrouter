@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,4 +23,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OpenRouter.Abstractions\OpenRouter.Abstractions.csproj" />
+    <ProjectReference Include="..\OpenRouter.Client.SystemTextJson\OpenRouter.Client.SystemTextJson.csproj" />
+    <ProjectReference Include="..\OpenRouter.Client.NewtonsoftJson\OpenRouter.Client.NewtonsoftJson.csproj" />
+  </ItemGroup>
 </Project>
