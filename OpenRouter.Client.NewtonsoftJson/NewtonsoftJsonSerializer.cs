@@ -29,7 +29,7 @@ namespace OpenRouter.Client.NewtonsoftJson
         /// Initializes a new instance of the <see cref="NewtonsoftJsonSerializer"/> class with custom converters.
         /// </summary>
         /// <param name="converters">A collection of custom JsonConverters to use.</param>
-        public NewtonsoftJsonSerializer(IEnumerable<Newtonsoft.Json.JsonConverter> converters)
+        public NewtonsoftJsonSerializer(IEnumerable<JsonConverter> converters)
         {
             _settings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
             if (converters != null)
@@ -56,7 +56,7 @@ namespace OpenRouter.Client.NewtonsoftJson
             }
             catch (Exception ex)
             {
-                throw new OpenRouter.Abstractions.OpenRouterSerializationException("Serialization failed.", ex);
+                throw new OpenRouterSerializationException("Serialization failed.", ex);
             }
         }
 
@@ -75,7 +75,7 @@ namespace OpenRouter.Client.NewtonsoftJson
             }
             catch (Exception ex)
             {
-                throw new OpenRouter.Abstractions.OpenRouterSerializationException("Deserialization failed.", ex);
+                throw new OpenRouterSerializationException("Deserialization failed.", ex);
             }
         }
 
@@ -94,7 +94,7 @@ namespace OpenRouter.Client.NewtonsoftJson
             }
             catch (Exception ex)
             {
-                throw new OpenRouter.Abstractions.OpenRouterSerializationException("Deserialization failed.", ex);
+                throw new OpenRouterSerializationException("Deserialization failed.", ex);
             }
         }
         /// <summary>
@@ -109,7 +109,10 @@ namespace OpenRouter.Client.NewtonsoftJson
             try
             {
                 if (stream == null)
-                    throw new OpenRouter.Abstractions.OpenRouterSerializationException("Target stream cannot be null.");
+                {
+                    throw new OpenRouterSerializationException("Target stream cannot be null.");
+                }
+
                 using var writer = new System.IO.StreamWriter(stream, System.Text.Encoding.UTF8, 1024, leaveOpen: true);
                 var json = JsonConvert.SerializeObject(value, _settings);
                 writer.Write(json);
@@ -117,7 +120,7 @@ namespace OpenRouter.Client.NewtonsoftJson
             }
             catch (Exception ex)
             {
-                throw new OpenRouter.Abstractions.OpenRouterSerializationException("Streaming serialization failed.", ex);
+                throw new OpenRouterSerializationException("Streaming serialization failed.", ex);
             }
         }
 
@@ -134,15 +137,18 @@ namespace OpenRouter.Client.NewtonsoftJson
             try
             {
                 if (stream == null)
-                    throw new OpenRouter.Abstractions.OpenRouterSerializationException("Target stream cannot be null.");
+                {
+                    throw new OpenRouterSerializationException("Target stream cannot be null.");
+                }
+
                 var json = JsonConvert.SerializeObject(value, _settings);
-                using var writer = new System.IO.StreamWriter(stream, System.Text.Encoding.UTF8, 1024, leaveOpen: true);
+                await using var writer = new System.IO.StreamWriter(stream, System.Text.Encoding.UTF8, 1024, leaveOpen: true);
                 await writer.WriteAsync(json.AsMemory(), cancellationToken).ConfigureAwait(false);
                 await writer.FlushAsync().ConfigureAwait(false);
             }
             catch (Exception ex)
             {
-                throw new OpenRouter.Abstractions.OpenRouterSerializationException("Streaming serialization failed.", ex);
+                throw new OpenRouterSerializationException("Streaming serialization failed.", ex);
             }
         }
 
@@ -158,14 +164,17 @@ namespace OpenRouter.Client.NewtonsoftJson
             try
             {
                 if (stream == null)
-                    throw new OpenRouter.Abstractions.OpenRouterSerializationException("Source stream cannot be null.");
+                {
+                    throw new OpenRouterSerializationException("Source stream cannot be null.");
+                }
+
                 using var reader = new System.IO.StreamReader(stream, System.Text.Encoding.UTF8, true, 1024, leaveOpen: true);
                 var json = reader.ReadToEnd();
                 return JsonConvert.DeserializeObject<T>(json, _settings)!;
             }
             catch (Exception ex)
             {
-                throw new OpenRouter.Abstractions.OpenRouterSerializationException("Streaming deserialization failed.", ex);
+                throw new OpenRouterSerializationException("Streaming deserialization failed.", ex);
             }
         }
 
@@ -182,14 +191,17 @@ namespace OpenRouter.Client.NewtonsoftJson
             try
             {
                 if (stream == null)
-                    throw new OpenRouter.Abstractions.OpenRouterSerializationException("Source stream cannot be null.");
+                {
+                    throw new OpenRouterSerializationException("Source stream cannot be null.");
+                }
+
                 using var reader = new System.IO.StreamReader(stream, System.Text.Encoding.UTF8, true, 1024, leaveOpen: true);
                 var json = await reader.ReadToEndAsync().ConfigureAwait(false);
                 return JsonConvert.DeserializeObject<T>(json, _settings)!;
             }
             catch (Exception ex)
             {
-                throw new OpenRouter.Abstractions.OpenRouterSerializationException("Streaming deserialization failed.", ex);
+                throw new OpenRouterSerializationException("Streaming deserialization failed.", ex);
             }
         }
     }
