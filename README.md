@@ -1,6 +1,7 @@
 # OpenRouter API Client (.NET Standard 2.1 / Unity Compatible)
 
-[![Build Status](https://github.com/CaptiveReality/OpenRouter/actions/workflows/ci.yml/badge.svg)](https://github.com/CaptiveReality/OpenRouter/actions)
+[![Build Status](https://github.com/markcastle/openrouter/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/markcastle/openrouter/actions)
+[![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/markcastle/openrouter/actions) <!-- Update the badge URL percentage when coverage changes -->
 [![NuGet](https://img.shields.io/nuget/v/OpenRouter.Client.Core.svg)](https://www.nuget.org/packages/OpenRouter.Client.Core)
 
 ---

@@ -1,8 +1,8 @@
 {
   "settings": {
     "documentationRules": {
-      "companyName": "CaptiveReality",
-      "copyrightText": "Copyright © CaptiveReality 2025",
+      "companyName": "Captive Reality Ltd",
+      "copyrightText": "Copyright © Captive Reality Ltd 2025",
       "xmlHeader": true,
       "documentExposedElements": true,
       "documentInternalElements": true
