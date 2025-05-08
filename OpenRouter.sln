@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRouter.Client.Resilienc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRouter.Client.Resilience.Tests", "OpenRouter.Client.Resilience.Tests\OpenRouter.Client.Resilience.Tests.csproj", "{F65FE007-B452-4AF7-8544-F1DB15853064}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRouter.Client.SystemTextJson.Tests", "OpenRouter.Client.SystemTextJson.Tests\OpenRouter.Client.SystemTextJson.Tests.csproj", "{B162E731-16DD-4ADA-8DD4-5EEB19080B5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{F65FE007-B452-4AF7-8544-F1DB15853064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F65FE007-B452-4AF7-8544-F1DB15853064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F65FE007-B452-4AF7-8544-F1DB15853064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B162E731-16DD-4ADA-8DD4-5EEB19080B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B162E731-16DD-4ADA-8DD4-5EEB19080B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B162E731-16DD-4ADA-8DD4-5EEB19080B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B162E731-16DD-4ADA-8DD4-5EEB19080B5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

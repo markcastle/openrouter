@@ -455,3 +455,9 @@ The OpenRouter API client will support optional integration with ResilientHttpCl
    - Unity Package Manager compatible
    - Sample scenes
    - Documentation
+
+
+
+RULES:
+
+NEver edit Unit tests in order to get them to pass. Unless the tests are verifiably bad.

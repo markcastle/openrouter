@@ -1,7 +1,13 @@
 namespace OpenRouter.Client.SystemTextJson.Tests;
 
-public class UnitTest1
+/// <summary>
+/// Basic tests for System.Text.Json integration.
+/// </summary>
+public class SystemTextJsonBasicTests
 {
+    /// <summary>
+    /// Placeholder test method.
+    /// </summary>
     [Fact]
     public void Test1()
     {

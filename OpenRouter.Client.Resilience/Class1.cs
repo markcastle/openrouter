@@ -1,9 +1,12 @@
-﻿using System;
+using System;
 
 namespace OpenRouter.Client.Resilience
 {
-    public class Class1
+        /// <summary>
+    /// Adapter for resilient HTTP client logic (placeholder for future implementation).
+    /// </summary>
+    public class ResilientHttpClientAdapter
     {
-
+        // TODO: Implement resilience features
     }
 }
