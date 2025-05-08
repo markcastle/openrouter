@@ -79,6 +79,16 @@ This document breaks down the development process into EPICs and individual task
 - [x] Create RateLimitException
 - [x] Define ApiException with error details
 - [x] Create TimeoutException
+
+## EPIC: Serializer Abstraction & SOLID DI (CRITICALLY IMPORTANT)
+
+- [x] **Remove SerializerFactory from Core/DI:** Delete any factory that references both serializers, as it breaks SOLID and platform compatibility. _(2025-05-08)_
+- [x] **Add DI Extension Methods:** In each serializer project, add an extension method for registering the concrete implementation with `IServiceCollection`. _(2025-05-08)_
+- [x] **Core-Only Abstraction:** Ensure `OpenRouter.Client.Core` only depends on `ISerializer` and never on any concrete serializer. _(2025-05-08)_
+- [ ] **Update Documentation:** Document the DI registration process and platform compatibility in `README.md`. _(2025-05-08)_
+- [ ] **Unit Tests:** Add/adjust tests to ensure the correct serializer is injected and used, and that Core can run with either implementation. _(2025-05-08)_
+- [x] **Remove Microsoft.Extensions.DependencyInjection from NewtonsoftJson and provide Unity/manual usage guidance.** _(2025-05-08)_
+
 - [x] Define NetworkException
 - [x] Create SerializationException
 - [ ] Create base OpenRouterException class

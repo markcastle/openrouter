@@ -13,6 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Removed Microsoft.Extensions.DependencyInjection reference for Unity/manual compatibility -->
+<!-- <PackageReference Include="Microsoft.Extensions.DependencyInjection" reference for Unity compatibility -->
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 </Project>
