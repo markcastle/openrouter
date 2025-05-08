@@ -1,3 +1,5 @@
+using System;
+
 namespace OpenRouter.Abstractions
 {
     /// <summary>
@@ -6,13 +8,25 @@ namespace OpenRouter.Abstractions
     public class ProgressEventArgs : OpenRouterEventArgs
     {
         /// <summary>
-        /// Gets or sets the percentage of completion.
+        /// Gets the percentage of progress (0-100).
         /// </summary>
-        public double Percentage { get; set; }
+        public int ProgressPercentage { get; }
 
         /// <summary>
-        /// Gets or sets an optional status message.
+        /// Gets an optional status message.
         /// </summary>
-        public string? Status { get; set; }
+        public string? StatusMessage { get; }
+
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="ProgressEventArgs"/>.
+        /// </summary>
+        /// <param name="progressPercentage">The progress percentage (0-100).</param>
+        /// <param name="statusMessage">An optional status message.</param>
+        public ProgressEventArgs(int progressPercentage, string? statusMessage = null)
+        {
+            ProgressPercentage = progressPercentage;
+            StatusMessage = statusMessage;
+        }
     }
 }

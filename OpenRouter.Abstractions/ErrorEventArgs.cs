@@ -8,8 +8,18 @@ namespace OpenRouter.Abstractions
     public class ErrorEventArgs : OpenRouterEventArgs
     {
         /// <summary>
-        /// Gets or sets the exception that occurred.
+        /// Gets the exception that occurred.
         /// </summary>
-        public Exception? Exception { get; set; }
+        public Exception Exception { get; }
+
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="ErrorEventArgs"/>.
+        /// </summary>
+        /// <param name="exception">The exception that occurred.</param>
+        public ErrorEventArgs(Exception exception)
+        {
+            Exception = exception;
+        }
     }
 }

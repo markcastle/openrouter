@@ -1,3 +1,5 @@
+using System;
+
 namespace OpenRouter.Abstractions
 {
     /// <summary>
@@ -6,8 +8,18 @@ namespace OpenRouter.Abstractions
     public class StreamingEventArgs : OpenRouterEventArgs
     {
         /// <summary>
-        /// Gets or sets the chunk of streamed data.
+        /// Gets the data received in the streaming update.
         /// </summary>
-        public string? DataChunk { get; set; }
+        public object Data { get; }
+
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="StreamingEventArgs"/>.
+        /// </summary>
+        /// <param name="data">The streaming data.</param>
+        public StreamingEventArgs(object data)
+        {
+            Data = data;
+        }
     }
 }

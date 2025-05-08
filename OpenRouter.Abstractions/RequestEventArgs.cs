@@ -1,3 +1,5 @@
+using System;
+
 namespace OpenRouter.Abstractions
 {
     /// <summary>
@@ -6,8 +8,18 @@ namespace OpenRouter.Abstractions
     public class RequestEventArgs : OpenRouterEventArgs
     {
         /// <summary>
-        /// Gets or sets the request options associated with the event.
+        /// Gets the request model sent to the API.
         /// </summary>
-        public HttpRequestOptions? RequestOptions { get; set; }
+        public IRequestModel Request { get; }
+
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="RequestEventArgs"/>.
+        /// </summary>
+        /// <param name="request">The request model.</param>
+        public RequestEventArgs(IRequestModel request)
+        {
+            Request = request;
+        }
     }
 }

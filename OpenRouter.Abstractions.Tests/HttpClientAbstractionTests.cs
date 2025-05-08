@@ -1,3 +1,9 @@
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using OpenRouter.Abstractions;
+using Xunit;
+
 namespace OpenRouter.Abstractions.Tests
 {
     public class HttpClientAbstractionTests

@@ -7,6 +7,26 @@ namespace OpenRouter.Abstractions
     /// </summary>
     public abstract class OpenRouterEventArgs : EventArgs
     {
-        // Extend as needed for shared event data
+        /// <summary>
+        /// Gets the UTC timestamp when the event occurred.
+        /// </summary>
+        public DateTime TimestampUtc { get; }
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="OpenRouterEventArgs"/>.
+        /// </summary>
+        protected OpenRouterEventArgs()
+        {
+            TimestampUtc = DateTime.UtcNow;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of <see cref="OpenRouterEventArgs"/> with a custom timestamp.
+        /// </summary>
+        /// <param name="timestampUtc">The UTC timestamp for the event.</param>
+        protected OpenRouterEventArgs(DateTime timestampUtc)
+        {
+            TimestampUtc = timestampUtc;
+        }
     }
 }
