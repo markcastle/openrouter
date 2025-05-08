@@ -1,16 +1,17 @@
 namespace OpenRouter.Client.Core.Tests;
-
-/// <summary>
-/// Basic tests for OpenRouter.Client.Core.
-/// </summary>
-public class CoreBasicTests
 {
-    [Fact]
     /// <summary>
-    /// Placeholder test method.
+    /// Basic tests for OpenRouter.Client.Core.
     /// </summary>
-    public void Test1()
+    public class CoreBasicTests
     {
+        /// <summary>
+        /// Placeholder test method.
+        /// </summary>
+        [Fact]
+        public void Test1()
+        {
 
+        }
     }
 }

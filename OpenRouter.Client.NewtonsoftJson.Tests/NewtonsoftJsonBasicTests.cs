@@ -1,16 +1,16 @@
-namespace OpenRouter.Client.NewtonsoftJson.Tests;
-
-/// <summary>
-/// Basic tests for Newtonsoft.Json integration.
-/// </summary>
-public class NewtonsoftJsonBasicTests
+namespace OpenRouter.Client.NewtonsoftJson.Tests
 {
-    [Fact]
     /// <summary>
-    /// Placeholder test method.
+    /// Basic tests for Newtonsoft.Json integration.
     /// </summary>
-    public void Test1()
+    public class NewtonsoftJsonBasicTests
     {
-
+        /// <summary>
+        /// Placeholder test method.
+        /// </summary>
+        [Fact]
+        public void Test1()
+        {
+        }
     }
 }
