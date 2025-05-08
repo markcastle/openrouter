@@ -32,9 +32,11 @@ public class SystemTextJsonBasicTests
     }
 
     [Fact]
-    public void Deserialize_InvalidJson_Throws()
+    public void Deserialize_InvalidJson_ThrowsOpenRouterSerializationExceptionWithJsonExceptionInner()
     {
         var serializer = new SystemTextJsonSerializer();
-        Assert.ThrowsAny<System.Text.Json.JsonException>(() => serializer.Deserialize<SimpleModel>("not valid json"));
+        var ex = Assert.Throws<OpenRouter.Abstractions.OpenRouterSerializationException>(() => serializer.Deserialize<SimpleModel>("not valid json"));
+        Assert.NotNull(ex.InnerException);
+        Assert.IsType<System.Text.Json.JsonException>(ex.InnerException);
     }
 }
