@@ -105,12 +105,18 @@ Console.WriteLine(response.Choices[0].Message.Content);
    using OpenRouter.Client.NewtonsoftJson;
    using OpenRouter.Abstractions;
    
-   ISerializer serializer = new NewtonsoftJsonSerializer();
+   // Register custom converters (e.g., DateTimeOffsetConverter)
+   var converters = new List<Newtonsoft.Json.JsonConverter>
+   {
+       new OpenRouter.Client.NewtonsoftJson.DateTimeOffsetConverter()
+   };
+   ISerializer serializer = new NewtonsoftJsonSerializer(converters);
    var client = new OpenRouterClient(
        new OpenRouterClientOptions { /* ... */ },
        serializer // pass as dependency
    );
    ```
+   You can also pass a custom JsonSerializerSettings if you need more control.
 3. **No DI required.**
 
 #### Which Should I Use?

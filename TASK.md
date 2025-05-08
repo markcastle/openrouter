@@ -85,7 +85,7 @@ This document breaks down the development process into EPICs and individual task
 - [x] **Remove SerializerFactory from Core/DI:** Delete any factory that references both serializers, as it breaks SOLID and platform compatibility. _(2025-05-08)_
 - [x] **Add DI Extension Methods:** In each serializer project, add an extension method for registering the concrete implementation with `IServiceCollection`. _(2025-05-08)_
 - [x] **Core-Only Abstraction:** Ensure `OpenRouter.Client.Core` only depends on `ISerializer` and never on any concrete serializer. _(2025-05-08)_
-- [ ] **Update Documentation:** Document the DI registration process and platform compatibility in `README.md`. _(2025-05-08)_
+- [x] **Update Documentation:** Document the DI registration process, platform compatibility, and custom converter usage in `README.md`. _(2025-05-08)_
 - [x] **Remove Microsoft.Extensions.DependencyInjection from NewtonsoftJson and provide Unity/manual usage guidance.** _(2025-05-08)_
 
 - [x] Define NetworkException
