@@ -7,7 +7,13 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);1591</NoWarn>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OpenRouter.Client.SystemTextJson\OpenRouter.Client.SystemTextJson.csproj" />
+    <ProjectReference Include="..\OpenRouter.Client.NewtonsoftJson\OpenRouter.Client.NewtonsoftJson.csproj" />
+  </ItemGroup>
 </Project>
