@@ -1,33 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TestRun id="74f9dfb3-1c55-4e66-a254-4967a2d97de6" name="markc@DUOPRO 2025-05-08 01:51:17" runUser="DUOPRO\markc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <Times creation="2025-05-08T01:51:17.5239130+01:00" queuing="2025-05-08T01:51:17.5239133+01:00" start="2025-05-08T01:51:13.7341945+01:00" finish="2025-05-08T01:51:17.5364889+01:00" />
-  <TestSettings name="default" id="31c34e14-db7a-44f8-a7f1-3a255b500f18">
-    <Deployment runDeploymentRoot="markc_DUOPRO_2025-05-08_01_51_17" />
+<TestRun id="3a3e2fe3-6276-4edf-83ee-a63aa9513dbf" name="markc@DUOPRO 2025-05-08 04:05:29" runUser="DUOPRO\markc" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-05-08T04:05:29.2625969+01:00" queuing="2025-05-08T04:05:29.2625975+01:00" start="2025-05-08T04:05:27.0034752+01:00" finish="2025-05-08T04:05:29.2747609+01:00" />
+  <TestSettings name="default" id="6da91dce-5116-4a19-904f-88cd4677a5bf">
+    <Deployment runDeploymentRoot="markc_DUOPRO_2025-05-08_04_05_29" />
   </TestSettings>
   <Results>
-    <UnitTestResult executionId="24ba4080-f07a-447a-b9cb-e0d0d9efb996" testId="456677ee-11ba-742a-7cf2-06f72bf2d3ea" testName="OpenRouter.Client.NewtonsoftJson.Tests.NewtonsoftJsonBasicTests.Test1" computerName="DUOPRO" duration="00:00:00.0043401" startTime="2025-05-08T01:51:17.3355975+01:00" endTime="2025-05-08T01:51:17.3356525+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="24ba4080-f07a-447a-b9cb-e0d0d9efb996" />
+    <UnitTestResult executionId="520cc241-3d24-4037-a689-721ba13c1680" testId="d469898a-f982-8757-2649-bc086bf70c14" testName="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests.MessageConstructor_ShouldSetMessage" computerName="DUOPRO" duration="00:00:00.0002619" startTime="2025-05-08T04:05:29.0808798+01:00" endTime="2025-05-08T04:05:29.0808799+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="520cc241-3d24-4037-a689-721ba13c1680" />
+    <UnitTestResult executionId="b1bd7b4b-5620-40cb-ba05-8188aece7405" testId="a142d081-0fa0-78ea-fbd9-54ba722e8665" testName="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests.InnerExceptionConstructor_ShouldSetInnerException" computerName="DUOPRO" duration="00:00:00.0116418" startTime="2025-05-08T04:05:29.0806931+01:00" endTime="2025-05-08T04:05:29.0806932+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1bd7b4b-5620-40cb-ba05-8188aece7405" />
+    <UnitTestResult executionId="0608e97d-e4d0-46de-bdc6-274f0bd404d4" testId="4bc398cd-9a9c-1819-3291-ce9278b4be4a" testName="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests.MessageConstructor_ShouldSetMessage" computerName="DUOPRO" duration="00:00:00.0001575" startTime="2025-05-08T04:05:29.0809300+01:00" endTime="2025-05-08T04:05:29.0809301+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0608e97d-e4d0-46de-bdc6-274f0bd404d4" />
+    <UnitTestResult executionId="53ce88f4-695c-4748-8957-877bbf205363" testId="c8d9616d-2b04-87f8-9fa9-ab1192981005" testName="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests.DefaultConstructor_ShouldCreateInstance" computerName="DUOPRO" duration="00:00:00.0001440" startTime="2025-05-08T04:05:29.0808246+01:00" endTime="2025-05-08T04:05:29.0808247+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53ce88f4-695c-4748-8957-877bbf205363" />
+    <UnitTestResult executionId="ad8d56dd-6152-4d05-96bd-c5dadeaef911" testId="00f60481-259d-7cfa-a057-381bc7205c3e" testName="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests.InnerExceptionConstructor_ShouldSetInnerException" computerName="DUOPRO" duration="00:00:00.0008939" startTime="2025-05-08T04:05:29.0807597+01:00" endTime="2025-05-08T04:05:29.0807597+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad8d56dd-6152-4d05-96bd-c5dadeaef911" />
+    <UnitTestResult executionId="7a6eccf3-1159-4087-a1f9-b91896eafaa7" testId="66f7e7fa-c908-0d3e-c13b-56ac57dc2a70" testName="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests.DefaultConstructor_ShouldCreateInstance" computerName="DUOPRO" duration="00:00:00.0004126" startTime="2025-05-08T04:05:29.0805530+01:00" endTime="2025-05-08T04:05:29.0805531+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a6eccf3-1159-4087-a1f9-b91896eafaa7" />
+    <UnitTestResult executionId="73a9b38d-b9c1-48c5-90d2-256b956fc99f" testId="47bb65a4-e33f-ff6e-c12c-6c05d195c377" testName="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests.MessageConstructor_ShouldSetMessage" computerName="DUOPRO" duration="00:00:00.0046896" startTime="2025-05-08T04:05:29.0739544+01:00" endTime="2025-05-08T04:05:29.0739909+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="73a9b38d-b9c1-48c5-90d2-256b956fc99f" />
+    <UnitTestResult executionId="1c1e2f8b-8aea-452f-82a0-08daedcf0bec" testId="e6dd204c-bf5a-8dc1-343e-6486605eb281" testName="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests.DefaultConstructor_ShouldCreateInstance" computerName="DUOPRO" duration="00:00:00.0001651" startTime="2025-05-08T04:05:29.0809585+01:00" endTime="2025-05-08T04:05:29.0809585+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1c1e2f8b-8aea-452f-82a0-08daedcf0bec" />
+    <UnitTestResult executionId="205e0064-475c-49c9-b155-769914414ec6" testId="007d64a1-ba86-9b02-48e0-408f3a42d6ae" testName="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests.InnerExceptionConstructor_ShouldSetInnerException" computerName="DUOPRO" duration="00:00:00.0116226" startTime="2025-05-08T04:05:29.0806706+01:00" endTime="2025-05-08T04:05:29.0806707+01:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="205e0064-475c-49c9-b155-769914414ec6" />
   </Results>
   <TestDefinitions>
-    <UnitTest name="OpenRouter.Client.NewtonsoftJson.Tests.NewtonsoftJsonBasicTests.Test1" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.client.newtonsoftjson.tests\bin\debug\net6.0\openrouter.client.newtonsoftjson.tests.dll" id="456677ee-11ba-742a-7cf2-06f72bf2d3ea">
-      <Execution id="24ba4080-f07a-447a-b9cb-e0d0d9efb996" />
-      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Client.NewtonsoftJson.Tests\bin\Debug\net6.0\OpenRouter.Client.NewtonsoftJson.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Client.NewtonsoftJson.Tests.NewtonsoftJsonBasicTests" name="Test1" />
+    <UnitTest name="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests.DefaultConstructor_ShouldCreateInstance" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="66f7e7fa-c908-0d3e-c13b-56ac57dc2a70">
+      <Execution id="7a6eccf3-1159-4087-a1f9-b91896eafaa7" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests" name="DefaultConstructor_ShouldCreateInstance" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests.MessageConstructor_ShouldSetMessage" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="d469898a-f982-8757-2649-bc086bf70c14">
+      <Execution id="520cc241-3d24-4037-a689-721ba13c1680" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests" name="MessageConstructor_ShouldSetMessage" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests.MessageConstructor_ShouldSetMessage" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="4bc398cd-9a9c-1819-3291-ce9278b4be4a">
+      <Execution id="0608e97d-e4d0-46de-bdc6-274f0bd404d4" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests" name="MessageConstructor_ShouldSetMessage" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests.DefaultConstructor_ShouldCreateInstance" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="e6dd204c-bf5a-8dc1-343e-6486605eb281">
+      <Execution id="1c1e2f8b-8aea-452f-82a0-08daedcf0bec" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests" name="DefaultConstructor_ShouldCreateInstance" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests.InnerExceptionConstructor_ShouldSetInnerException" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="a142d081-0fa0-78ea-fbd9-54ba722e8665">
+      <Execution id="b1bd7b4b-5620-40cb-ba05-8188aece7405" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests" name="InnerExceptionConstructor_ShouldSetInnerException" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests.InnerExceptionConstructor_ShouldSetInnerException" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="007d64a1-ba86-9b02-48e0-408f3a42d6ae">
+      <Execution id="205e0064-475c-49c9-b155-769914414ec6" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.OpenRouterAuthenticationExceptionTests" name="InnerExceptionConstructor_ShouldSetInnerException" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests.InnerExceptionConstructor_ShouldSetInnerException" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="00f60481-259d-7cfa-a057-381bc7205c3e">
+      <Execution id="ad8d56dd-6152-4d05-96bd-c5dadeaef911" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests" name="InnerExceptionConstructor_ShouldSetInnerException" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests.DefaultConstructor_ShouldCreateInstance" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="c8d9616d-2b04-87f8-9fa9-ab1192981005">
+      <Execution id="53ce88f4-695c-4748-8957-877bbf205363" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.AbstractionsInterfaceTests" name="DefaultConstructor_ShouldCreateInstance" />
+    </UnitTest>
+    <UnitTest name="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests.MessageConstructor_ShouldSetMessage" storage="c:\work\captivereality\dev\experimental\openrouter\openrouter.abstractions.tests\bin\debug\net6.0\openrouter.abstractions.tests.dll" id="47bb65a4-e33f-ff6e-c12c-6c05d195c377">
+      <Execution id="73a9b38d-b9c1-48c5-90d2-256b956fc99f" />
+      <TestMethod codeBase="C:\Work\CaptiveReality\Dev\Experimental\OpenRouter\OpenRouter.Abstractions.Tests\bin\Debug\net6.0\OpenRouter.Abstractions.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="OpenRouter.Abstractions.Tests.OpenRouterApiExceptionTests" name="MessageConstructor_ShouldSetMessage" />
     </UnitTest>
   </TestDefinitions>
   <TestEntries>
-    <TestEntry testId="456677ee-11ba-742a-7cf2-06f72bf2d3ea" executionId="24ba4080-f07a-447a-b9cb-e0d0d9efb996" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d469898a-f982-8757-2649-bc086bf70c14" executionId="520cc241-3d24-4037-a689-721ba13c1680" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a142d081-0fa0-78ea-fbd9-54ba722e8665" executionId="b1bd7b4b-5620-40cb-ba05-8188aece7405" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4bc398cd-9a9c-1819-3291-ce9278b4be4a" executionId="0608e97d-e4d0-46de-bdc6-274f0bd404d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8d9616d-2b04-87f8-9fa9-ab1192981005" executionId="53ce88f4-695c-4748-8957-877bbf205363" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00f60481-259d-7cfa-a057-381bc7205c3e" executionId="ad8d56dd-6152-4d05-96bd-c5dadeaef911" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66f7e7fa-c908-0d3e-c13b-56ac57dc2a70" executionId="7a6eccf3-1159-4087-a1f9-b91896eafaa7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="47bb65a4-e33f-ff6e-c12c-6c05d195c377" executionId="73a9b38d-b9c1-48c5-90d2-256b956fc99f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6dd204c-bf5a-8dc1-343e-6486605eb281" executionId="1c1e2f8b-8aea-452f-82a0-08daedcf0bec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="007d64a1-ba86-9b02-48e0-408f3a42d6ae" executionId="205e0064-475c-49c9-b155-769914414ec6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <TestLists>
     <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
     <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
   </TestLists>
   <ResultSummary outcome="Completed">
-    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
     <Output>
-      <StdOut>[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v2.4.3+1b45f5407b (64-bit .NET 6.0.36)&#xD;
-[xUnit.net 00:00:01.20]   Discovering: OpenRouter.Client.NewtonsoftJson.Tests&#xD;
-[xUnit.net 00:00:01.28]   Discovered:  OpenRouter.Client.NewtonsoftJson.Tests&#xD;
-[xUnit.net 00:00:01.29]   Starting:    OpenRouter.Client.NewtonsoftJson.Tests&#xD;
-[xUnit.net 00:00:01.49]   Finished:    OpenRouter.Client.NewtonsoftJson.Tests&#xD;
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.3+1b45f5407b (64-bit .NET 6.0.36)&#xD;
+[xUnit.net 00:00:01.01]   Discovering: OpenRouter.Abstractions.Tests&#xD;
+[xUnit.net 00:00:01.08]   Discovered:  OpenRouter.Abstractions.Tests&#xD;
+[xUnit.net 00:00:01.09]   Starting:    OpenRouter.Abstractions.Tests&#xD;
+[xUnit.net 00:00:01.20]   Finished:    OpenRouter.Abstractions.Tests&#xD;
 </StdOut>
     </Output>
   </ResultSummary>
