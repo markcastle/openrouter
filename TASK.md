@@ -45,9 +45,10 @@ This document breaks down the development process into EPICs and individual task
 - [x] Configure CI/CD pipeline (GitHub Actions)
 - [x] Set up code coverage reporting (Coverlet)
 - [x] Set up static code analysis (StyleCop)
-- [ ] Create build scripts (PowerShell/Bash)
-- [ ] Set up automated test running on check-in
+- [x] Create build scripts (PowerShell/Bash)  <!-- Completed: All projects and test orchestration are stable -->
+- [x] Set up automated test running on check-in  <!-- Completed: CI workflow runs tests on push/PR to main and develop -->
 - [ ] Configure automated package versioning
+- [ ] Implement automated package versioning (e.g., GitVersion, Nerdbank.GitVersioning, or GitHub Actions)
 - [ ] Set up NuGet publishing pipeline
 - [ ] Create release documentation template
 
