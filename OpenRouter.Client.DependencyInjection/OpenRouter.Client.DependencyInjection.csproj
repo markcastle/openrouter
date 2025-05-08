@@ -2,6 +2,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OpenRouter.Abstractions\OpenRouter.Abstractions.csproj" />
+    <ProjectReference Include="..\OpenRouter.Client.SystemTextJson\OpenRouter.Client.SystemTextJson.csproj" />
+    <ProjectReference Include="..\OpenRouter.Client.NewtonsoftJson\OpenRouter.Client.NewtonsoftJson.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
