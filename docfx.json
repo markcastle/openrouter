@@ -1,0 +1,25 @@
+{
+  "metadata": [
+    {
+      "src": [
+        { "files": ["**/*.csproj"], "exclude": ["**/*.Tests.csproj"] }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      { "files": ["**/*.md", "**/*.yml"] }
+    ],
+    "resource": [
+      { "files": ["**/images/**"] }
+    ],
+    "overwrite": [
+      { "files": ["**/apidoc/**.md"] }
+    ],
+    "dest": "_site",
+    "globalMetadata": {
+      "_appTitle": "OpenRouter API Client Documentation"
+    }
+  }
+}

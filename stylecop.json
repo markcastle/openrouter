@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "documentationRules": {
+      "companyName": "CaptiveReality",
+      "copyrightText": "Copyright © CaptiveReality 2025",
+      "xmlHeader": true,
+      "documentExposedElements": true,
+      "documentInternalElements": true
+    },
+    "orderingRules": {
+      "usingDirectivesPlacement": "outsideNamespace"
+    }
+  }
+}
