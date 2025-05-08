@@ -1,4 +1,4 @@
-namespace OpenRouter.Client.Core.Tests;
+namespace OpenRouter.Client.Core.Tests
 {
     /// <summary>
     /// Basic tests for OpenRouter.Client.Core.

@@ -1,4 +1,4 @@
-namespace OpenRouter.Client.DependencyInjection.Tests;
+namespace OpenRouter.Client.DependencyInjection.Tests
 {
     /// <summary>
     /// Basic tests for Dependency Injection integration.
