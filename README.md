@@ -79,6 +79,46 @@ Console.WriteLine(response.Choices[0].Message.Content);
 
 ---
 
+## Serializer Configuration (DI & Unity/Manual)
+
+### .NET Core / ASP.NET (System.Text.Json via DI)
+
+1. **Install:**
+   ```sh
+   dotnet add package OpenRouter.Client.SystemTextJson
+   ```
+2. **Register in DI:**
+   ```csharp
+   using OpenRouter.Client.SystemTextJson;
+   // ...
+   services.AddSystemTextJsonSerializer();
+   // Now ISerializer will resolve to SystemTextJsonSerializer
+   ```
+3. **Inject or resolve ISerializer as needed.**
+
+### Unity or Manual Instantiation (Newtonsoft.Json)
+
+1. **Install:**
+   - Add `OpenRouter.Client.NewtonsoftJson` DLL or NuGet (no MS DI dependency, Unity safe)
+2. **Manual Usage:**
+   ```csharp
+   using OpenRouter.Client.NewtonsoftJson;
+   using OpenRouter.Abstractions;
+   
+   ISerializer serializer = new NewtonsoftJsonSerializer();
+   var client = new OpenRouterClient(
+       new OpenRouterClientOptions { /* ... */ },
+       serializer // pass as dependency
+   );
+   ```
+3. **No DI required.**
+
+#### Which Should I Use?
+- **.NET Core/ASP.NET:** Prefer System.Text.Json with DI for best performance and integration.
+- **Unity or platforms without MS DI:** Use NewtonsoftJson and instantiate manually.
+
+---
+
 ## Extensibility & Unity Compatibility
 - **Interfaces-first:** All core logic is interface-driven for easy extension and testing.
 - **Unity:** Designed for main-thread safety, minimal allocations, and compatible serialization.
