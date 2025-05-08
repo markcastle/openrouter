@@ -1,4 +1,4 @@
-# OpenRouter API Client (.NET Standard 2.1 / Unity Compatible)
+# 🚀 OpenRouter API Client (.NET Standard 2.1 / Unity Compatible)
 
 [![Build Status](https://github.com/markcastle/openrouter/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/markcastle/openrouter/actions)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/markcastle/openrouter/actions) <!-- Update the badge URL percentage when coverage changes -->
@@ -6,24 +6,24 @@
 
 ---
 
-## Project Vision
+## 🎯 Project Vision
 
 A robust, modular, and developer-friendly OpenRouter API client targeting .NET Standard 2.1 for maximum compatibility—including Unity—with 100% xUnit test coverage, extensibility, and advanced DI and HTTP resilience support.
 
 ---
 
-## Features
-- **Multi-project architecture** for clean separation of concerns
-- **Unity compatible** (.NET Standard 2.1, no Unity-breaking dependencies)
-- **Provider-agnostic JSON serialization** (System.Text.Json & Newtonsoft.Json)
-- **Optional Microsoft DI and ResilientHttpClient**
-- **SOLID, KISS, YAGNI** principles
-- **Comprehensive documentation and samples**
-- **Streaming, error handling, and resilience**
+## ✨ Features
+- 🧩 **Multi-project architecture** for clean separation of concerns
+- 🎮 **Unity compatible** (.NET Standard 2.1, no Unity-breaking dependencies)
+- 🔄 **Provider-agnostic JSON serialization** (System.Text.Json & Newtonsoft.Json)
+- 🏗️ **Optional Microsoft DI and ResilientHttpClient**
+- 🧠 **SOLID, KISS, YAGNI** principles
+- 📚 **Comprehensive documentation and samples**
+- 🌊 **Streaming, error handling, and resilience**
 
 ---
 
-## Solution Structure
+## 🏗️ Solution Structure
 
 - `OpenRouter.Abstractions` — Interfaces, base models, contracts (no concrete dependencies)
 - `OpenRouter.Client.Core` — Core implementation, default logic
@@ -35,7 +35,7 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ---
 
-## Architecture Overview
+## 🧠 Architecture Overview
 
 - **Client:** `IOpenRouterClient` interface and `OpenRouterClient` implementation
 - **Configuration:** `OpenRouterClientOptions` and builder pattern
@@ -47,7 +47,7 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ---
 
-## Installation
+## 📦 Installation
 
 1. **Via NuGet**
    - Core: `dotnet add package OpenRouter.Client.Core`
@@ -58,7 +58,7 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ---
 
-## Usage Example
+## 💡 Usage Example
 
 ```csharp
 var client = new OpenRouterClient(new OpenRouterClientOptions
@@ -79,9 +79,9 @@ Console.WriteLine(response.Choices[0].Message.Content);
 
 ---
 
-## Serializer Configuration (DI & Unity/Manual)
+## ⚙️ Serializer Configuration (DI & Unity/Manual)
 
-### .NET Core / ASP.NET (System.Text.Json via DI)
+### 🖥️ .NET Core / ASP.NET (System.Text.Json via DI)
 
 1. **Install:**
    ```sh
@@ -96,7 +96,7 @@ Console.WriteLine(response.Choices[0].Message.Content);
    ```
 3. **Inject or resolve ISerializer as needed.**
 
-### Unity or Manual Instantiation (Newtonsoft.Json)
+### 🎮 Unity or Manual Instantiation (Newtonsoft.Json)
 
 1. **Install:**
    - Add `OpenRouter.Client.NewtonsoftJson` DLL or NuGet (no MS DI dependency, Unity safe)
@@ -119,20 +119,20 @@ Console.WriteLine(response.Choices[0].Message.Content);
    You can also pass a custom JsonSerializerSettings if you need more control.
 3. **No DI required.**
 
-#### Which Should I Use?
+#### 🤔 Which Should I Use?
 - **.NET Core/ASP.NET:** Prefer System.Text.Json with DI for best performance and integration.
 - **Unity or platforms without MS DI:** Use NewtonsoftJson and instantiate manually.
 
 ---
 
-## Extensibility & Unity Compatibility
+## 🧩 Extensibility & Unity Compatibility
 - **Interfaces-first:** All core logic is interface-driven for easy extension and testing.
 - **Unity:** Designed for main-thread safety, minimal allocations, and compatible serialization.
 - **DI/Resilience:** Optional integration with Microsoft.Extensions.DependencyInjection and ResilientHttpClient.
 
 ---
 
-## Testing
+## 🧪 Testing
 - 100% xUnit code coverage target
 - Unit tests for all components and edge cases
 - Integration tests with mocked HTTP
@@ -140,7 +140,7 @@ Console.WriteLine(response.Choices[0].Message.Content);
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 1. Fork and clone the repo
 2. Create a feature branch (`git checkout -b feature/your-feature`)
