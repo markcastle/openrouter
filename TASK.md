@@ -65,13 +65,13 @@ This document breaks down the development process into EPICs and individual task
 ## EPIC 2: Core Architecture
 
 ### 2.1 Interface Design
-- [ ] Define IOpenRouterClient interface
-- [ ] Create interface for HTTP abstraction layer
-- [ ] Define authentication service interfaces
-- [ ] Create logging interface abstractions
-- [ ] Define model interfaces for requests/responses
-- [ ] Create event notification interfaces
-- [ ] Define configuration interfaces
+- [x] Define IOpenRouterClient interface
+- [x] Create interface for HTTP abstraction layer
+- [x] Define authentication service interfaces
+- [x] Create logging interface abstractions
+- [x] Define model interfaces for requests/responses
+- [x] Create event notification interfaces
+- [x] Define configuration interfaces
 
 ### 2.2 Exception Hierarchy
 - [ ] Create base OpenRouterException class
