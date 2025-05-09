@@ -32,3 +32,17 @@ jobs:
         with:
           name: coverage-report
           path: coveragereport
+      - name: Update coverage badge in README
+        if: github.event_name == 'push'
+        shell: pwsh
+        run: ./.github/workflows/update-coverage-badge.ps1
+      - name: Commit and push README update
+        if: github.event_name == 'push'
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add README.md
+          git diff --cached --quiet || git commit -m "Update coverage badge [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
