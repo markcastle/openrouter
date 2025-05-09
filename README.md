@@ -6,6 +6,11 @@
 
 ---
 
+> **Disclaimer:**
+> 
+> This repo is in **active development** and is being *"vibe coded"*. Use it at your own risk.
+> Our goal is to build a stable, well-tested, and optimized library. Once it is fully tested and optimized, we hope to release it as a stable package.
+
 ## 🎯 Project Vision
 
 A robust, modular, and developer-friendly OpenRouter API client targeting .NET Standard 2.1 for maximum compatibility—including Unity—with 100% xUnit test coverage, extensibility, and advanced DI and HTTP resilience support.
