@@ -30,74 +30,6 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ---
 
-## 📅 Project Roadmap
-
-**Setup & DevOps**
-- [x] Solution and project setup (Core, Abstractions, SystemTextJson, NewtonsoftJson, DI, Resilience)
-- [x] Test projects and CI/CD pipeline with coverage
-- [x] Static code analysis (StyleCop)
-- [x] PR/issue templates & changelog
-- [ ] Automated package versioning & NuGet publishing
-- [ ] Release documentation & wiki structure
-
-**Core Architecture & Serialization**
-- [x] Serializer abstraction & SOLID DI
-- [x] Exception hierarchy and error handling
-- [x] Core-only abstraction (no concrete serializer dependency)
-- [x] Remove all serializer attributes from models (pure POCOs)
-- [x] Custom property naming/mapping for OpenRouter contract
-- [ ] Custom naming policy support (System.Text.Json/Newtonsoft)
-- [ ] Performance optimizations (Newtonsoft)
-- [ ] Configuration options & extension methods for easy setup
-
-**HTTP Client & Infrastructure**
-- [x] HTTP adapter/factory/interfaces
-- [x] Request/response/parameter models
-- [x] Basic CRUD operations (GET/POST/PUT/DELETE)
-- [x] Streaming support (infrastructure)
-- [ ] Async initialization, event handlers, logging integration
-- [ ] Client-side timeout handling
-
-**Client Builder & Configuration**
-- [x] Fluent builder for configuration
-- [x] Client-side validation logic
-- [ ] Environment handling (dev/prod), versioning support
-
-**API Endpoints**
-- [ ] Chat completions endpoint (basic)
-- [ ] Parameter support (temperature, max tokens, etc.)
-- [ ] Model listing/details, provider routing, cost estimation
-- [ ] Token counting utilities, response validation, error handling
-
-**Streaming & Events**
-- [x] Event-based notification architecture
-- [ ] Streaming infrastructure & SSE parsing
-- [ ] Event-based notification for streaming, buffer management
-
-**Dependency Injection & Integration**
-- [ ] MS.Extensions.DependencyInjection integration & options pattern
-- [ ] Named clients, scoped disposal, DI container tests
-- [ ] DI integration documentation
-
-**Resilience & Advanced HTTP**
-- [ ] ResilientHttpClient integration (retry/circuit breaker)
-- [ ] Resilience event handling, metrics, and tests
-
-**Unity-Specific**
-- [ ] Unity thread dispatcher, main thread callbacks, editor integration
-- [ ] Unity networking/memory/error/platform optimizations
-
-**Testing & Coverage**
-- [x] 87.4%+ code coverage with xUnit
-- [ ] 100% code coverage (add tests for uncovered code, edge/failure cases)
-- [ ] Advanced test infrastructure: mocks, fixtures, performance, edge cases
-
-**Examples & Documentation**
-- [x] Example console app and usage docs
-- [ ] More usage examples (including streaming)
-- [ ] Improve API samples and documentation
-- [ ] Wiki and advanced guides
-
 ## 🏗️ Solution Structure
 
 - `OpenRouter.Abstractions` — Interfaces, base models, contracts (no concrete dependencies)
@@ -366,3 +298,72 @@ options.Validate(); // Throws if any required config is missing or invalid
 ## License
 
 MIT © Captive Reality Ltd 2025
+
+# 📅 Project Roadmap
+
+**Setup & DevOps**
+- [x] Solution and project setup (Core, Abstractions, SystemTextJson, NewtonsoftJson, DI, Resilience)
+- [x] Test projects and CI/CD pipeline with coverage
+- [x] Static code analysis (StyleCop)
+- [x] PR/issue templates & changelog
+- [ ] Automated package versioning & NuGet publishing
+- [ ] Release documentation & wiki structure
+
+**Core Architecture & Serialization**
+- [x] Serializer abstraction & SOLID DI
+- [x] Exception hierarchy and error handling
+- [x] Core-only abstraction (no concrete serializer dependency)
+- [x] Remove all serializer attributes from models (pure POCOs)
+- [x] Custom property naming/mapping for OpenRouter contract
+- [ ] Custom naming policy support (System.Text.Json/Newtonsoft)
+- [ ] Performance optimizations (Newtonsoft)
+- [ ] Configuration options & extension methods for easy setup
+
+**HTTP Client & Infrastructure**
+- [x] HTTP adapter/factory/interfaces
+- [x] Request/response/parameter models
+- [x] Basic CRUD operations (GET/POST/PUT/DELETE)
+- [x] Streaming support (infrastructure)
+- [ ] Async initialization, event handlers, logging integration
+- [ ] Client-side timeout handling
+
+**Client Builder & Configuration**
+- [x] Fluent builder for configuration
+- [x] Client-side validation logic
+- [ ] Environment handling (dev/prod), versioning support
+
+**API Endpoints**
+- [ ] Chat completions endpoint (basic)
+- [ ] Parameter support (temperature, max tokens, etc.)
+- [ ] Model listing/details, provider routing, cost estimation
+- [ ] Token counting utilities, response validation, error handling
+
+**Streaming & Events**
+- [x] Event-based notification architecture
+- [ ] Streaming infrastructure & SSE parsing
+- [ ] Event-based notification for streaming, buffer management
+
+**Dependency Injection & Integration**
+- [ ] MS.Extensions.DependencyInjection integration & options pattern
+- [ ] Named clients, scoped disposal, DI container tests
+- [ ] DI integration documentation
+
+**Resilience & Advanced HTTP**
+- [ ] ResilientHttpClient integration (retry/circuit breaker)
+- [ ] Resilience event handling, metrics, and tests
+
+**Unity-Specific**
+- [ ] Unity thread dispatcher, main thread callbacks, editor integration
+- [ ] Unity networking/memory/error/platform optimizations
+
+**Testing & Coverage**
+- [x] 87.4%+ code coverage with xUnit
+- [ ] 100% code coverage (add tests for uncovered code, edge/failure cases)
+- [ ] Advanced test infrastructure: mocks, fixtures, performance, edge cases
+
+**Examples & Documentation**
+- [x] Example console app and usage docs
+- [ ] More usage examples (including streaming)
+- [ ] Improve API samples and documentation
+- [ ] Wiki and advanced guides
+
