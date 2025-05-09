@@ -25,44 +25,56 @@ namespace OpenRouter.ConsoleExample
                 return;
             }
 
-            OpenRouterClientBuilder builder = new OpenRouterClientBuilder()
-                .WithApiKey(apiKey)
-                .WithBaseUrl("https://openrouter.ai/api/v1/")
-                .WithHttpClient(new BasicHttpClientAdapter())
-                .WithSerializer(new SystemTextJsonSerializer())
-                .WithTimeout(30);
-
-            OpenRouterClientOptions options = builder.Build();
-
-            var client = new OpenRouterClient(
-                new BasicHttpClientAdapter(),
-                new SystemTextJsonSerializer(),
-                options
-            );
-
-            // TODO: Replace with actual request/response models
-
-            var chatRequest = new ChatCompletionRequest
+            // Debug output for API key
+            Console.WriteLine($"[DEBUG] API key length: {apiKey.Length}");
+            Console.WriteLine($"[DEBUG] API key is null or empty: {string.IsNullOrWhiteSpace(apiKey)}");
+            Console.WriteLine($"[DEBUG] Environment variable OPENROUTER_API_KEY: {(apiKey != null ? "SET" : "NOT SET")}");
+            if (!string.IsNullOrEmpty(apiKey) && apiKey.Length > 8)
             {
-                Model = "gpt-3.5-turbo",
-                Messages = new List<Message>
-                {
-                    new Message
-                    {
-                        Role = "user",
-                        Content = "Hello!"
-                    }
-                }
-            };
-            
-            try
-            {
-                ChatCompletionResponse response = await client.SendAsync<ChatCompletionRequest, ChatCompletionResponse>(chatRequest);
-                Console.WriteLine(response.Choices[0].Message.Content);
+                Console.WriteLine($"[DEBUG] API key preview: {apiKey.Substring(0, 4)}...{apiKey.Substring(apiKey.Length - 4)}");
             }
-            catch (Exception ex)
+
+            if (apiKey != null)
             {
-                Console.WriteLine($"Request failed: {ex.Message}");
+                OpenRouterClientBuilder builder = new OpenRouterClientBuilder()
+                    .WithApiKey(apiKey)
+                    .WithBaseUrl("https://openrouter.ai/api/v1/")
+                    .WithHttpClient(new BasicHttpClientAdapter())
+                    .WithSerializer(new SystemTextJsonSerializer())
+                    .WithTimeout(30);
+
+                OpenRouterClientOptions options = builder.Build();
+
+                var client = new OpenRouterClient(
+                    new BasicHttpClientAdapter(),
+                    new SystemTextJsonSerializer(),
+                    options
+                );
+
+                // TODO: Replace with actual request/response models
+
+                var chatRequest = new ChatCompletionRequest
+                {
+                    Model = "openrouter/auto",
+                    Messages = new List<Message>
+                    {
+                        new Message
+                        {
+                            Role = "user",
+                            Content = "Hello!, Whats the capital of France?"
+                        }
+                    }
+                };
+            
+                try
+                {
+                    ChatCompletionResponse response = await client.SendAsync<ChatCompletionRequest, ChatCompletionResponse>(chatRequest);
+                    Console.WriteLine(response.Choices[0].Message.Content);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Request failed: {ex.Message}");
+                }
             }
         }
     }

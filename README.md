@@ -141,10 +141,25 @@ A complete, runnable example is provided in [`/examples/OpenRouter.ConsoleExampl
 
 ```sh
 cd examples/OpenRouter.ConsoleExample
-# Edit Program.cs and set your actual OpenRouter API key
-# Optionally, update the request model to your needs
+# Set your actual OpenRouter API key as an environment variable
+# (Windows CMD)
+set OPENROUTER_API_KEY=sk-...yourkey...
+# (PowerShell)
+$env:OPENROUTER_API_KEY="sk-...yourkey..."
+# (Linux/macOS)
+export OPENROUTER_API_KEY=sk-...yourkey...
 
 dotnet run
+```
+
+**Expected output:**
+
+```
+[DEBUG] API key length: 73
+[DEBUG] API key is null or empty: False
+[DEBUG] Environment variable OPENROUTER_API_KEY: SET
+[DEBUG] API key preview: sk-o...9509
+The capital of France is Paris. It is also the largest city in France and one of the most populous cities in Europe. Paris is known for its iconic landmarks such as the Eiffel Tower, the Louvre Museum, Notre-Dame Cathedral, and the Arc de Triomphe.
 ```
 
 This demonstrates how to configure and use the OpenRouter client with real API calls, including error handling and placeholder models.

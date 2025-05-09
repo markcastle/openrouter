@@ -37,11 +37,17 @@ namespace OpenRouter.Client.Core.Adapters
             }
             var request = new HttpRequestMessage(method, uri);
 
-            // Add headers
+            // Add headers (except Content-Type)
+            string? contentTypeOverride = null;
             if (options.Headers != null)
             {
                 foreach (var header in options.Headers)
                 {
+                    if (header.Name.Equals("Content-Type", StringComparison.OrdinalIgnoreCase))
+                    {
+                        contentTypeOverride = header.Value;
+                        continue; // Don't add Content-Type to request.Headers
+                    }
                     request.Headers.Add(header.Name, header.Value);
                 }
             }
@@ -49,7 +55,8 @@ namespace OpenRouter.Client.Core.Adapters
             // Add body if present
             if (!string.IsNullOrWhiteSpace(options.Body))
             {
-                request.Content = new StringContent(options.Body, System.Text.Encoding.UTF8, options.ContentType ?? "application/json");
+                var contentType = contentTypeOverride ?? options.ContentType ?? "application/json";
+                request.Content = new StringContent(options.Body, System.Text.Encoding.UTF8, contentType);
             }
 
             var response = await _client.SendAsync(request, cancellationToken);
