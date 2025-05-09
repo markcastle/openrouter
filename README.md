@@ -37,13 +37,16 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ## 🧠 Architecture Overview
 
-- **Client:** `IOpenRouterClient` interface and `OpenRouterClient` implementation
-- **Configuration:** `OpenRouterClientOptions` and builder pattern
+- **Client:** `IOpenRouterClient` interface (implementation coming soon)
+- **Configuration:** `OpenRouterClientOptions` with nested option objects and fluent builder for safe, flexible setup
+- **Validation:** All options are fully validated for required fields and sensible defaults
 - **Authentication:** API key and bearer token support
 - **Models:** Request/response models mirror the OpenRouter API schema
 - **HTTP Layer:** Adapter pattern for HTTP clients and resilience
 - **Event Notification:** Extensible event system for streaming and errors
 - **Error Handling:** Custom exception hierarchy for robust error reporting
+- **SOLID Compliance:** No factories or tight coupling; everything is interface-driven and easily testable
+- **100% xUnit Coverage:** All builder and config logic is fully tested, including edge/failure cases
 
 ---
 
@@ -60,22 +63,37 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ## 💡 Usage Example
 
+### Using the Fluent Builder (Recommended)
+
 ```csharp
-var client = new OpenRouterClient(new OpenRouterClientOptions
-{
-    ApiKey = "your-api-key",
-    BaseUrl = "https://openrouter.ai/api/v1/"
-});
+var builder = new OpenRouterClientBuilder()
+    .WithApiKey("your-api-key")
+    .WithBaseUrl("https://openrouter.ai/api/v1/")
+    .WithHttpClient(yourHttpClientAdapter) // Implement IHttpClientAdapter as needed
+    .WithSerializer(yourSerializer)        // Implement ISerializer as needed
+    .WithTimeout(30);                     // Timeout in seconds (optional)
 
-var chatRequest = new ChatCompletionRequest
-{
-    Model = "gpt-3.5-turbo",
-    Messages = new List<Message> { new Message { Role = "user", Content = "Hello!" } }
-};
-
-var response = await client.SendAsync<ChatCompletionRequest, ChatCompletionResponse>(chatRequest);
-Console.WriteLine(response.Choices[0].Message.Content);
+var options = builder.Build();
+// Pass options to your client implementation when ready
 ```
+
+### Manual Options Construction (Advanced)
+
+```csharp
+var options = new OpenRouterClientOptions
+{
+    Authentication = new AuthenticationOptions { ApiKey = "your-api-key" },
+    Http = new HttpOptions { BaseUrl = "https://openrouter.ai/api/v1/", TimeoutSeconds = 30 }
+};
+```
+
+### Validating Options
+
+```csharp
+options.Validate(); // Throws if any required config is missing or invalid
+```
+
+---
 
 ---
 

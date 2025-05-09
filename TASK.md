@@ -185,8 +185,8 @@ This document breaks down the development process into EPICs and individual task
 - [x] Implement WithTimeout method _(2025-05-09)_
 - [ ] Create WithRetryPolicy method _(not required, removed for SOLID compliance)_
 - [x] Implement Build method to create client instance _(2025-05-09)_
-- [ ] Implement default parameter handling
-- [ ] Create client-side validation logic
+- [x] Implement default parameter handling _(2025-05-09)_
+- [x] Create client-side validation logic _(2025-05-09)_
 - [ ] Implement handling for different environments (dev/prod)
 - [ ] Create client versioning support
 - [ ] Implement client-side timeout handling
