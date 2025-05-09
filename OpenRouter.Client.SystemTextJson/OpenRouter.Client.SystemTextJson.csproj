@@ -7,9 +7,17 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <IsPackable>false</IsPackable>
-    <NoWarn>$(NoWarn);1591</NoWarn>
     <Nullable>enable</Nullable>
+    <PackageId>OpenRouter.Client.SystemTextJson</PackageId>
+    <Authors>Mark Castle</Authors>
+    <Company>Captive Reality Ltd</Company>
+    <Description>System.Text.Json-based serializer and integration for OpenRouter API client.</Description>
+    <PackageTags>OpenRouter;AI;API;SystemTextJson;Serializer</PackageTags>
+    <RepositoryUrl>https://github.com/markcastle/openrouter</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/markcastle/openrouter</PackageProjectUrl>
+    <Copyright>Copyright © Captive Reality Ltd 2025</Copyright>
+    <PackageReleaseNotes>Initial release of System.Text.Json serializer integration.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

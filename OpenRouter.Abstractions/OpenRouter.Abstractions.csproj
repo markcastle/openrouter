@@ -4,6 +4,17 @@
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <PackageId>OpenRouter.Abstractions</PackageId>
+    <Authors>Mark Castle</Authors>
+    <Company>Captive Reality Ltd</Company>
+    <Description>Abstractions and base contracts for OpenRouter API clients. No concrete dependencies.</Description>
+    <PackageTags>OpenRouter;AI;API;Abstractions</PackageTags>
+    <RepositoryUrl>https://github.com/markcastle/openrouter</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/markcastle/openrouter</PackageProjectUrl>
+    <Copyright>Copyright © Captive Reality Ltd 2025</Copyright>
+    <PackageReleaseNotes>Initial release of abstractions for OpenRouter API client.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
+

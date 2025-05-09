@@ -1,0 +1,39 @@
+name: Publish NuGet Packages
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore OpenRouter.sln
+
+      - name: Build
+        run: dotnet build OpenRouter.sln --configuration Release --no-restore
+
+      - name: Pack NuGet packages (with symbols)
+        run: |
+          dotnet pack OpenRouter.Abstractions/OpenRouter.Abstractions.csproj -c Release -p:PackageVersion=${{ github.ref_name }} --no-build --include-symbols --include-source
+          dotnet pack OpenRouter.Client.Core/OpenRouter.Client.Core.csproj -c Release -p:PackageVersion=${{ github.ref_name }} --no-build --include-symbols --include-source
+          dotnet pack OpenRouter.Client.SystemTextJson/OpenRouter.Client.SystemTextJson.csproj -c Release -p:PackageVersion=${{ github.ref_name }} --no-build --include-symbols --include-source
+          dotnet pack OpenRouter.Client.NewtonsoftJson/OpenRouter.Client.NewtonsoftJson.csproj -c Release -p:PackageVersion=${{ github.ref_name }} --no-build --include-symbols --include-source
+          dotnet pack OpenRouter.Client.DependencyInjection/OpenRouter.Client.DependencyInjection.csproj -c Release -p:PackageVersion=${{ github.ref_name }} --no-build --include-symbols --include-source
+          dotnet pack OpenRouter.Client.Resilience/OpenRouter.Client.Resilience.csproj -c Release -p:PackageVersion=${{ github.ref_name }} --no-build --include-symbols --include-source
+
+      - name: Publish to NuGet.org
+        run: |
+          for %P in (OpenRouter.Abstractions OpenRouter.Client.Core OpenRouter.Client.SystemTextJson OpenRouter.Client.NewtonsoftJson OpenRouter.Client.DependencyInjection OpenRouter.Client.Resilience) do (
+            dotnet nuget push %P\bin\Release\%P.${{ github.ref_name }}.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+            dotnet nuget push %P\bin\Release\%P.${{ github.ref_name }}.snupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          )
+        shell: cmd

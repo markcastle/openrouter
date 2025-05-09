@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
     <ProjectReference Include="..\OpenRouter.Abstractions\OpenRouter.Abstractions.csproj" />
@@ -7,9 +7,17 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <IsPackable>false</IsPackable>
-    <NoWarn>$(NoWarn);1591</NoWarn>
     <Nullable>enable</Nullable>
+    <PackageId>OpenRouter.Client.Core</PackageId>
+    <Authors>Mark Castle</Authors>
+    <Company>Captive Reality Ltd</Company>
+    <Description>Core client logic for OpenRouter API, including HTTP handling, validation, and extensibility.</Description>
+    <PackageTags>OpenRouter;AI;API;Client;Core</PackageTags>
+    <RepositoryUrl>https://github.com/markcastle/openrouter</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/markcastle/openrouter</PackageProjectUrl>
+    <Copyright>Copyright © Captive Reality Ltd 2025</Copyright>
+    <PackageReleaseNotes>Initial release of OpenRouter core client logic.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>

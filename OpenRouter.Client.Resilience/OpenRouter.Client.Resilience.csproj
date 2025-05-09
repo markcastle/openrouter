@@ -8,6 +8,17 @@
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <PackageId>OpenRouter.Client.Resilience</PackageId>
+    <Authors>Mark Castle</Authors>
+    <Company>Captive Reality Ltd</Company>
+    <Description>Resilience and advanced HTTP features for OpenRouter API client (retry, circuit breaker, etc).</Description>
+    <PackageTags>OpenRouter;AI;API;Resilience;HTTP</PackageTags>
+    <RepositoryUrl>https://github.com/markcastle/openrouter</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/markcastle/openrouter</PackageProjectUrl>
+    <Copyright>Copyright © Captive Reality Ltd 2025</Copyright>
+    <PackageReleaseNotes>Initial release of resilience and advanced HTTP features.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
+

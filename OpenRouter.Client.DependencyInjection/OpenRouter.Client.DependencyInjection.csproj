@@ -9,6 +9,17 @@
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
+    <PackageId>OpenRouter.Client.DependencyInjection</PackageId>
+    <Authors>Mark Castle</Authors>
+    <Company>Captive Reality Ltd</Company>
+    <Description>Microsoft.Extensions.DependencyInjection integration for OpenRouter API client.</Description>
+    <PackageTags>OpenRouter;AI;API;DependencyInjection;DI</PackageTags>
+    <RepositoryUrl>https://github.com/markcastle/openrouter</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/markcastle/openrouter</PackageProjectUrl>
+    <Copyright>Copyright © Captive Reality Ltd 2025</Copyright>
+    <PackageReleaseNotes>Initial release of DI integration for OpenRouter API client.</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
+

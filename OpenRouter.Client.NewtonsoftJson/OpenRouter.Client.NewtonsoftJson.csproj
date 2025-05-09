@@ -8,8 +8,16 @@
     <LangVersion>latest</LangVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <IsPackable>false</IsPackable>
-    <NoWarn>$(NoWarn);1591</NoWarn>
+    <PackageId>OpenRouter.Client.NewtonsoftJson</PackageId>
+    <Authors>Mark Castle</Authors>
+    <Company>Captive Reality Ltd</Company>
+    <Description>Newtonsoft.Json-based serializer and integration for OpenRouter API client.</Description>
+    <PackageTags>OpenRouter;AI;API;NewtonsoftJson;Serializer</PackageTags>
+    <RepositoryUrl>https://github.com/markcastle/openrouter</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/markcastle/openrouter</PackageProjectUrl>
+    <Copyright>Copyright © Captive Reality Ltd 2025</Copyright>
+    <PackageReleaseNotes>Initial release of Newtonsoft.Json serializer integration.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
