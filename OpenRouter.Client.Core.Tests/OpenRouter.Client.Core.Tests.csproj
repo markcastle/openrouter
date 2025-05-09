@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.20.72" />
     <ProjectReference Include="..\OpenRouter.Client.DependencyInjection\OpenRouter.Client.DependencyInjection.csproj" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
@@ -27,5 +28,6 @@
   <ItemGroup>
     <ProjectReference Include="..\OpenRouter.Abstractions\OpenRouter.Abstractions.csproj" />
     <ProjectReference Include="..\OpenRouter.Client.NewtonsoftJson\OpenRouter.Client.NewtonsoftJson.csproj" />
+    <ProjectReference Include="..\OpenRouter.Client.Core\OpenRouter.Client.Core.csproj" />
   </ItemGroup>
 </Project>

@@ -22,6 +22,7 @@ namespace OpenRouter.Abstractions
         /// <param name="type">The target type.</param>
         /// <param name="contentType">The content type.</param>
         /// <returns>The deserialized object.</returns>
+        [return: System.Diagnostics.CodeAnalysis.MaybeNull]
         object Deserialize(string content, Type type, string contentType);
     }
 }
