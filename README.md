@@ -198,7 +198,13 @@ options.Validate(); // Throws if any required config is missing or invalid
    using OpenRouter.Client.SystemTextJson;
    // ...
    services.AddSystemTextJsonSerializer();
-   // Now ISerializer will resolve to SystemTextJsonSerializer
+   // Now ISerializer will resolve to SystemTextJsonSerializer (advanced) or SystemTextJsonAdapter (basic, manual usage)
+   ```
+
+3. **Manual instantiation (basic):**
+   ```csharp
+   using OpenRouter.Client.SystemTextJson;
+   ISerializer serializer = new SystemTextJsonAdapter();
    ```
 3. **Inject or resolve ISerializer as needed.**
 
@@ -241,6 +247,9 @@ options.Validate(); // Throws if any required config is missing or invalid
 ## 🧪 Testing
 - 100% xUnit code coverage target
 - Unit tests for all components and edge cases
+- Full serialization/deserialization test coverage for both System.Text.Json and Newtonsoft.Json adapters, including:
+  - snake_case contract compliance
+  - expected, edge, and failure cases
 - Integration tests with mocked HTTP
 - Special test cases for streaming, Unicode, and error handling
 
@@ -259,6 +268,10 @@ options.Validate(); // Throws if any required config is missing or invalid
 ## Changelog
 
 **2025-05-09**
+- Moved SystemTextJsonSerializer (basic adapter) out of Core and into SystemTextJson project
+- All models are now pure POCOs (no serializer attributes)
+- Serialization configuration (snake_case, naming, converters) is handled externally for both System.Text.Json and Newtonsoft.Json
+- Full serialization/deserialization test coverage for both adapters (snake_case, expected, edge, failure cases)
 - Completed: Chat completions endpoint implementation, serialization, error handling, and full test coverage
 
 ---
