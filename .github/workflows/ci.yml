@@ -27,22 +27,19 @@ jobs:
           reports: '**/coverage.cobertura.xml'
           targetdir: 'coveragereport'
           reporttypes: 'HtmlInline_AzurePipelines;Cobertura'
+      - name: Output code coverage percent to log
+        shell: pwsh
+        run: |
+          $coverageFile = Get-ChildItem -Recurse -Filter coverage.cobertura.xml | Select-Object -First 1
+          if (-not $coverageFile) { Write-Host 'No coverage.cobertura.xml file found.'; exit 1 }
+          [xml]$xml = Get-Content $coverageFile.FullName
+          $rootLineRate = $xml.coverage.'line-rate'
+          $lineRate = [math]::Round(([double]$rootLineRate) * 100, 2)
+          Write-Host "##[group]CODE COVERAGE SUMMARY"
+          Write-Host "Total line coverage: $lineRate%"
+          Write-Host "##[endgroup]"
       - name: Upload Coverage Report
         uses: actions/upload-artifact@v4
         with:
           name: coverage-report
           path: coveragereport
-      - name: Update coverage badge in README
-        if: github.event_name == 'push'
-        shell: pwsh
-        run: ./.github/workflows/update-coverage-badge.ps1
-      - name: Commit and push README update
-        if: github.event_name == 'push'
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git add README.md
-          git diff --cached --quiet || git commit -m "Update coverage badge [skip ci]"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
