@@ -83,6 +83,51 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ## 💡 Usage Example
 
+### 🖥️ Chat Completions Endpoint Example
+
+Here's how to call the `/chat/completions` endpoint using the strongly-typed client:
+
+```csharp
+using OpenRouter.Client.Core;
+using OpenRouter.Abstractions;
+
+var options = new OpenRouterClientOptions
+{
+    Http = new HttpOptions { BaseUrl = "https://openrouter.ai/api/v1/" },
+    Authentication = new AuthenticationOptions { ApiKey = "your-api-key" }
+};
+var client = new OpenRouterClient(
+    new YourHttpClientAdapter(), // Implement IHttpClientAdapter as needed
+    new YourSerializer(),        // Implement ISerializer as needed
+    options
+);
+
+var request = new ChatCompletionRequest
+{
+    Model = "gpt-3.5-turbo",
+    Messages = new List<Message>
+    {
+        new Message { Role = "user", Content = "Hello, who are you?" }
+    }
+};
+
+try
+{
+    ChatCompletionResponse response = await client.CreateChatCompletionAsync(request);
+    string reply = response.Choices.First().Message.Content;
+    Console.WriteLine($"Assistant: {reply}");
+}
+catch (System.Net.Http.HttpRequestException ex)
+{
+    // Handle API errors (e.g., invalid API key, bad request)
+    Console.WriteLine($"API error: {ex.Message}");
+}
+```
+
+- All request/response models are strongly typed and match the OpenRouter API spec.
+- API errors throw `HttpRequestException` with details.
+- See the `OpenRouterClientChatCompletionsTests` for more usage patterns and edge cases.
+
 ### 🖥️ Console Example Project
 
 A complete, runnable example is provided in [`/examples/OpenRouter.ConsoleExample`](./examples/OpenRouter.ConsoleExample/).
@@ -203,6 +248,13 @@ options.Validate(); // Throws if any required config is missing or invalid
 3. Add or update tests for any new features or bug fixes
 4. Run all tests and ensure code coverage
 5. Submit a pull request with a clear description
+
+---
+
+## Changelog
+
+**2025-05-09**
+- Completed: Chat completions endpoint implementation, serialization, error handling, and full test coverage
 
 ---
 

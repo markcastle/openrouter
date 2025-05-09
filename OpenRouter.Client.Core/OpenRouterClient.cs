@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using OpenRouter.Abstractions;
+using OpenRouter.Client.Core.Adapters;
 
 namespace OpenRouter.Client.Core
 {
@@ -44,7 +45,24 @@ namespace OpenRouter.Client.Core
                 TimeoutSeconds = _options.Http.TimeoutSeconds
             };
             var httpResponse = await _httpClientAdapter.SendAsync(httpRequestOptions, cancellationToken);
+            // Throw if status code is not 2xx
+            if (httpResponse.StatusCode < 200 || httpResponse.StatusCode >= 300)
+            {
+                // Reason: Ensure API errors are surfaced to the caller
+                throw new System.Net.Http.HttpRequestException($"OpenRouter API error: {httpResponse.StatusCode} - {httpResponse.Content}");
+            }
             return _serializer.Deserialize<TResponse>(httpResponse.Content!);
+        }
+        /// <summary>
+        /// Calls the OpenRouter chat completions endpoint.
+        /// </summary>
+        /// <param name="request">The chat completion request.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <returns>The chat completion response.</returns>
+        public async Task<ChatCompletionResponse> CreateChatCompletionAsync(ChatCompletionRequest request, CancellationToken cancellationToken = default)
+        {
+            // Reason: Strongly-typed endpoint for chat completions
+            return await SendAsync<ChatCompletionRequest, ChatCompletionResponse>(request, cancellationToken);
         }
     }
 }

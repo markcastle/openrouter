@@ -1,5 +1,6 @@
 using System.Threading;
 using System.Threading.Tasks;
+using OpenRouter.Abstractions;
 
 namespace OpenRouter.Abstractions
 {
@@ -17,5 +18,13 @@ namespace OpenRouter.Abstractions
         /// <param name="cancellationToken">A cancellation token for the async operation.</param>
         /// <returns>The response from the API.</returns>
         Task<TResponse> SendAsync<TRequest, TResponse>(TRequest request, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Calls the OpenRouter chat completions endpoint.
+        /// </summary>
+        /// <param name="request">The chat completion request.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <returns>The chat completion response.</returns>
+        Task<ChatCompletionResponse> CreateChatCompletionAsync(ChatCompletionRequest request, CancellationToken cancellationToken = default);
     }
 }

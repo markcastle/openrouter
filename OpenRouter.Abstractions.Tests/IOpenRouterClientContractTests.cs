@@ -28,6 +28,13 @@ namespace OpenRouter.Abstractions.Tests
                 // Reason: This is a dummy implementation for contract tests; default! is safe here.
                 return Task.FromResult<TResponse>(default!);
             }
+
+            public Task<OpenRouter.Abstractions.ChatCompletionResponse> CreateChatCompletionAsync(OpenRouter.Abstractions.ChatCompletionRequest request, CancellationToken cancellationToken = default)
+            {
+                // Dummy implementation for contract test
+                // Reason: This is a dummy implementation for contract tests; default! is safe here.
+                return Task.FromResult<OpenRouter.Abstractions.ChatCompletionResponse>(default!);
+            }
         }
     }
 }

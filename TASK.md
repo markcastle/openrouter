@@ -192,9 +192,9 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement client-side timeout handling
 
 ## Discovered During Work _(2025-05-09)_
-- [ ] Create example console project in /examples/console
-- [ ] Add sample usage code and documentation in CONSOL-EXAMPLE.md
-- [ ] Test end-to-end flow with real API call
+- [x] Create example console project in /examples/console _(2025-05-09)_
+- [x] Add sample usage code and documentation in CONSOL-EXAMPLE.md _(2025-05-09)_
+- [x] Test end-to-end flow with real API call _(2025-05-09)_
 
 - [ ] Create client-side caching strategy
 - [ ] Implement client diagnostics
