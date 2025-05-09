@@ -333,8 +333,8 @@ MIT © Captive Reality Ltd 2025
 - [ ] Environment handling (dev/prod), versioning support
 
 **API Endpoints**
-- [ ] Chat completions endpoint (basic)
-- [ ] Parameter support (temperature, max tokens, etc.)
+- [x] Chat completions endpoint (basic)
+- [x] Parameter support (temperature, max tokens, etc.)
 - [ ] Model listing/details, provider routing, cost estimation
 - [ ] Token counting utilities, response validation, error handling
 
