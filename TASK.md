@@ -177,14 +177,14 @@ This document breaks down the development process into EPICs and individual task
 
 ## 3. Client Builder, Configuration & Extensions
 
-- [ ] Create OpenRouterClientBuilder class
-- [ ] Implement WithApiKey method
-- [ ] Create WithBaseUrl method
-- [ ] Implement WithHttpClient method
-- [ ] Create WithSerializer method
-- [ ] Implement WithTimeout method
-- [ ] Create WithRetryPolicy method
-- [ ] Implement Build method to create client instance
+- [x] Create OpenRouterClientBuilder class _(2025-05-09)_
+- [x] Implement WithApiKey method _(2025-05-09)_
+- [x] Create WithBaseUrl method _(2025-05-09)_
+- [x] Implement WithHttpClient method _(2025-05-09)_
+- [x] Create WithSerializer method _(2025-05-09)_
+- [x] Implement WithTimeout method _(2025-05-09)_
+- [ ] Create WithRetryPolicy method _(not required, removed for SOLID compliance)_
+- [x] Implement Build method to create client instance _(2025-05-09)_
 - [ ] Implement default parameter handling
 - [ ] Create client-side validation logic
 - [ ] Implement handling for different environments (dev/prod)
