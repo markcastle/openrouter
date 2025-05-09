@@ -1,5 +1,9 @@
 # TASKS.md - OpenRouter API Client Development Tasks
 
+**This document is now ordered by practical priority, value, and dependency, not by original EPIC number.**
+
+---
+
 This document breaks down the development process into EPICs and individual tasks. Each task includes a checkbox to track completion status. EPICs are numbered in priority/implementation order.
 
 ## EPIC 1: Project Setup
@@ -51,13 +55,6 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement automated package versioning (e.g., GitVersion, Nerdbank.GitVersioning, or GitHub Actions)
 - [ ] Set up NuGet publishing pipeline
 - [ ] Create release documentation template
-
-### 1.5 Documentation Framework
-- [x] Create comprehensive README.md with emojis and clear sections
-- [x] Set up documentation generation (DocFX)
-- [x] Create initial API documentation structure
-- [x] Add contributing guidelines (CONTRIBUTING.md)
-- [x] Create code of conduct document
 - [x] Set up PR and issue templates
 - [x] Create initial changelog (CHANGELOG.md)
 - [ ] Set up wiki structure (if using GitHub wiki)
@@ -107,7 +104,8 @@ This document breaks down the development process into EPICs and individual task
 - [x] Create progress notification system
 - [x] Define event aggregation system
 
-### 2.4 Configuration Models
+## 8. Configuration Models (Completed)
+
 - [x] Create OpenRouterClientOptions class
 - [x] Define authentication options
 - [x] Create HTTP configuration options
@@ -115,22 +113,11 @@ This document breaks down the development process into EPICs and individual task
 - [x] Create resilience configuration options
 - [x] Define provider routing options
 - [x] Create options validation system
-- [x] Create OpenRouterClientOptions class
-- [x] Define authentication options
-- [x] Create HTTP configuration options
-- [x] Define serialization options
-- [x] Create resilience configuration options
-- [x] Define provider routing options
-- [x] Create options validation system
 
-## EPIC 3: JSON Serialization
+---
 
-### Discovered During Work
-- Serialization abstraction is now unified under ISerializer/ISerializer<T> for maximum flexibility and testability.
-- Event system is fully tested, including event args and notifier interface unit tests.
+## 1. Serialization Improvements
 
-
-### 3.1 Serialization Interfaces
 - [x] Create IJsonSerializer interface in Abstractions project (now unified as ISerializer/ISerializer<T>)
 - [x] Define IJsonSerializerFactory interface (not required, handled by factory/future extension)
 - [x] Create serialization option models
@@ -138,8 +125,6 @@ This document breaks down the development process into EPICs and individual task
 - [x] Create serialization attribute definitions (not required for MVP, can extend)
 - [x] Define serialization context interface (not required for MVP, can extend)
 - [x] Create serialization error handling interfaces
-
-### 3.2 System.Text.Json Implementation
 - [x] Create SystemTextJsonSerializer class
 - [x] Implement serialization methods
 - [x] Create custom converters for complex types
@@ -147,29 +132,21 @@ This document breaks down the development process into EPICs and individual task
 - [x] Implement content type handler for JSON _(2025-05-09)_
 - [x] Add System.Text.Json dependency
 - [x] Implement error handling and logging
-- [ ] Add custom naming policy support
-
-### 3.3 Newtonsoft.Json Implementation
+- [ ] Add custom naming policy support (System.Text.Json)
 - [x] Create NewtonsoftJsonSerializer class
 - [x] Implement serialization methods
 - [x] Create custom converters for complex types
 - [x] Implement streaming deserialization support
-- [ ] Create performance optimizations
+- [ ] Create performance optimizations (Newtonsoft)
 - [x] Implement error handling and logging
-- [ ] Add custom naming policy support
-
-### 3.4 Serialization Factory
-- [ ] Create JsonSerializerFactory implementation
-- [ ] Implement auto-detection logic
-- [ ] Create fallback mechanism
-- [ ] Implement serializer caching
+- [ ] Add custom naming policy support (Newtonsoft)
 - [ ] Add configuration options
 - [ ] Create extension methods for easy setup
-- [ ] Implement dependency injection support
 
-## EPIC 4: HTTP Infrastructure
+---
 
-### 4.1 HTTP Client Abstraction
+## 2. HTTP Client Infrastructure & Factory
+
 - [x] Define IHttpClientAdapter interface _(2025-05-09)_
 - [x] Create HttpRequestOptions class _(2025-05-09)_
 - [x] Define HttpResponseWrapper class _(2025-05-09)_
@@ -177,8 +154,6 @@ This document breaks down the development process into EPICs and individual task
 - [x] Define HttpHeader and HttpParameter models _(2025-05-09)_
 - [x] Create HTTP operations enum (GET, POST, etc.) _(2025-05-09)_
 - [x] Define content type handlers _(2025-05-09)_
-
-### 4.2 Standard HTTP Client Implementation
 - [x] Create HttpClientAdapter class _(2025-05-09)_
 - [x] Implement SendAsync method _(2025-05-09)_
 - [x] Create GetAsync implementation _(2025-05-09)_
@@ -187,18 +162,6 @@ This document breaks down the development process into EPICs and individual task
 - [x] Implement DeleteAsync method _(2025-05-09)_
 - [x] Create SendStreamingAsync implementation _(2025-05-09)_
 - [x] Implement cancellation support _(2025-05-09)_
-
-### 4.3 Resilient HTTP Client Implementation
-- [ ] Create ResilientHttpClientAdapter class
-- [ ] Implement connection to ResilientHttpClient
-- [ ] Create options mapper
-- [ ] Implement retry policy configuration
-- [ ] Create circuit breaker configuration
-- [ ] Implement timeout handling
-- [ ] Create event handling for resilience events
-- [ ] Implement resource disposal
-
-### 4.4 HTTP Client Factory
 - [x] Create DefaultHttpClientFactory _(2025-05-09)_
 - [x] Implement CreateHttpClient method _(2025-05-09)_
 - [x] Create client caching mechanism _(2025-05-09)_
@@ -210,7 +173,10 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement event handlers
 - [ ] Create logging integration
 
-### 7.2 Client Builder Pattern
+---
+
+## 3. Client Builder, Configuration & Extensions
+
 - [ ] Create OpenRouterClientBuilder class
 - [ ] Implement WithApiKey method
 - [ ] Create WithBaseUrl method
@@ -219,8 +185,6 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement WithTimeout method
 - [ ] Create WithRetryPolicy method
 - [ ] Implement Build method to create client instance
-
-### 7.3 Client Configuration
 - [ ] Implement default parameter handling
 - [ ] Create client-side validation logic
 - [ ] Implement handling for different environments (dev/prod)
@@ -228,8 +192,6 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement client-side timeout handling
 - [ ] Create client-side caching strategy
 - [ ] Implement client diagnostics
-
-### 7.4 Client Extensions
 - [ ] Create extension methods for common operations
 - [ ] Implement convenience methods for simple use cases
 - [ ] Create fluent interface extensions
@@ -238,7 +200,9 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement ease-of-use extensions
 - [ ] Create backward compatibility extensions
 
-## EPIC 8: Chat Completions Endpoint
+---
+
+## 4. API Endpoints: Chat, Models, Provider Routing
 
 - [ ] Implement basic chat completions endpoint
 - [ ] Add parameter support (temperature, max tokens, etc.)
@@ -248,9 +212,6 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement error handling
 - [ ] Add token counting utilities
 - [ ] Create request builders
-
-## EPIC 9: Models Endpoint
-
 - [ ] Implement model listing endpoint
 - [ ] Create model detail interfaces
 - [ ] Add model filtering capabilities
@@ -259,9 +220,6 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Add model compatibility checking
 - [ ] Implement model info caching
 - [ ] Create model documentation helpers
-
-## EPIC 10: Provider Routing
-
 - [ ] Implement provider preferences
 - [ ] Add provider routing options
 - [ ] Create provider fallback mechanisms
@@ -271,7 +229,9 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Implement provider routing optimization
 - [ ] Add provider cost estimation
 
-## EPIC 11: Streaming Support
+---
+
+## 5. Streaming Support
 
 - [ ] Create streaming infrastructure
 - [ ] Implement Server-Sent Events parsing
@@ -282,7 +242,9 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Create buffer management
 - [ ] Implement streaming error handling
 
-## EPIC 12: Dependency Injection
+---
+
+## 6. Dependency Injection & Integration (Future Improvements)
 
 - [ ] Create Microsoft.Extensions.DependencyInjection integration project
 - [ ] Implement service collection extensions for registration
@@ -295,10 +257,23 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Create extension methods for all client features
 - [ ] Implement client builder pattern
 - [ ] Create DI integration documentation
+- [ ] Implement dependency injection support (serialization)
 
-## EPIC 13: Resilience Integration
+---
+
+## 9. Resilience Integration (Last)
 
 - [ ] Create OpenRouter.Client.Resilience project
+- [ ] Create ResilientHttpClientAdapter class
+- [ ] Implement connection to ResilientHttpClient
+- [ ] Create options mapper
+- [ ] Implement retry policy configuration
+- [ ] Create circuit breaker configuration
+- [ ] Implement timeout handling
+- [ ] Create event handling for resilience events
+- [ ] Implement resource disposal
+
+---
 - [ ] Implement `ResilientHttpClientAdapter` using the ResilientHttpClient
 - [ ] Create mapping between OpenRouter options and ResilientHttpClient options
 - [ ] Implement auto-detection and fallback
