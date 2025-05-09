@@ -59,6 +59,13 @@ This document breaks down the development process into EPICs and individual task
 - [x] Create initial changelog (CHANGELOG.md)
 - [ ] Set up wiki structure (if using GitHub wiki)
 
+---
+
+## Discovered During Work
+
+- [ ] Increase code coverage to 100% (add tests for uncovered code, edge/failure cases)
+- [ ] Add more usage examples (including streaming) and document them in README and /examples
+
 ## EPIC 2: Core Architecture
 
 ### 2.1 Interface Design
@@ -308,20 +315,20 @@ This document breaks down the development process into EPICs and individual task
 ## EPIC 15: Unit Testing
 
 ### 15.1 Testing Infrastructure
-- [ ] Set up xUnit in all test projects
+- [x] Set up xUnit in all test projects
 - [ ] Configure test data generators
 - [ ] Create mock implementations for all interfaces
 - [ ] Set up HTTP response mocking
 - [ ] Implement test fixtures and shared contexts
 - [ ] Create test categories and traits
-- [ ] Set up code coverage analysis tools
+- [x] Set up code coverage analysis tools
 
 ### 15.2 Abstractions Tests
 - [ ] Create interface contract tests
-- [ ] Test exception hierarchy
+- [x] Test exception hierarchy
 - [ ] Create model validation tests
-- [ ] Test configuration options validation
-- [ ] Implement serialization contract tests
+- [x] Test configuration options validation
+- [x] Implement serialization contract tests
 - [ ] Create event argument tests
 - [ ] Test utility methods
 
@@ -335,10 +342,10 @@ This document breaks down the development process into EPICs and individual task
 - [ ] Test default behaviors
 
 ### 15.4 JSON Serialization Tests
-- [ ] Test System.Text.Json serializer
-- [ ] Create Newtonsoft.Json serializer tests
+- [x] Test System.Text.Json serializer
+- [x] Create Newtonsoft.Json serializer tests
 - [ ] Test serialization of complex objects
-- [ ] Create deserialization tests
+- [x] Create deserialization tests
 - [ ] Test error handling during serialization
 - [ ] Create performance comparison tests
 - [ ] Test serialization of edge cases (Unicode, large numbers, etc.)
