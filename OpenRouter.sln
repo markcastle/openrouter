@@ -46,6 +46,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRouter.Client.Newtonsof
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRouter.Client.SystemTextJson", "OpenRouter.Client.SystemTextJson\OpenRouter.Client.SystemTextJson.csproj", "{C8D33813-5BAE-1CA8-CC2E-65347B07AAA9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{144EFFD2-9E71-4B19-A687-14AA495F8A76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenRouter.ConsoleExample", "examples\OpenRouter.ConsoleExample\OpenRouter.ConsoleExample.csproj", "{424F033F-1A5A-1552-8F95-2E9A9BBA1BB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +104,10 @@ Global
 		{C8D33813-5BAE-1CA8-CC2E-65347B07AAA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8D33813-5BAE-1CA8-CC2E-65347B07AAA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8D33813-5BAE-1CA8-CC2E-65347B07AAA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{424F033F-1A5A-1552-8F95-2E9A9BBA1BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{424F033F-1A5A-1552-8F95-2E9A9BBA1BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{424F033F-1A5A-1552-8F95-2E9A9BBA1BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{424F033F-1A5A-1552-8F95-2E9A9BBA1BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -117,6 +125,7 @@ Global
 		{20FEF816-3D47-D3A3-DA55-211C39360CF5} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{0C3F047F-8EA4-F12B-7B70-3E333DFDA270} = {ED364247-FF7D-4516-9E8D-AF17F95496E5}
 		{C8D33813-5BAE-1CA8-CC2E-65347B07AAA9} = {ED364247-FF7D-4516-9E8D-AF17F95496E5}
+		{424F033F-1A5A-1552-8F95-2E9A9BBA1BB6} = {144EFFD2-9E71-4B19-A687-14AA495F8A76}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {56DE2290-FB6C-4302-855B-FB9CA99E51D8}

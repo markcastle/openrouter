@@ -50,6 +50,26 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 
 ---
 
+## 🚀 Getting Started
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/markcastle/openrouter.git
+   cd openrouter
+   ```
+2. **Restore dependencies**
+   ```sh
+   dotnet restore
+   ```
+3. **Run all tests (optional, recommended)**
+   ```sh
+   dotnet test
+   ```
+4. **Try the example console app**
+   See [Usage Example](#usage-example) above.
+
+---
+
 ## 📦 Installation
 
 1. **Via NuGet**
@@ -62,6 +82,24 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 ---
 
 ## 💡 Usage Example
+
+### 🖥️ Console Example Project
+
+A complete, runnable example is provided in [`/examples/OpenRouter.ConsoleExample`](./examples/OpenRouter.ConsoleExample/).
+
+**To run the example:**
+
+```sh
+cd examples/OpenRouter.ConsoleExample
+# Edit Program.cs and set your actual OpenRouter API key
+# Optionally, update the request model to your needs
+
+dotnet run
+```
+
+This demonstrates how to configure and use the OpenRouter client with real API calls, including error handling and placeholder models.
+
+---
 
 ### Using the Fluent Builder (Recommended)
 
