@@ -13,6 +13,49 @@ namespace OpenRouter.Client.Core
     /// </summary>
     public class HttpClientAdapter : IHttpClientAdapter
     {
+        /// <summary>
+        /// Sends a GET request.
+        /// </summary>
+        public Task<HttpResponseWrapper> GetAsync(HttpRequestOptions options, CancellationToken cancellationToken = default)
+        {
+            options.Operation = HttpOperation.Get;
+            return SendAsync(options, cancellationToken);
+        }
+
+        /// <summary>
+        /// Sends a POST request.
+        /// </summary>
+        public Task<HttpResponseWrapper> PostAsync(HttpRequestOptions options, CancellationToken cancellationToken = default)
+        {
+            options.Operation = HttpOperation.Post;
+            return SendAsync(options, cancellationToken);
+        }
+
+        /// <summary>
+        /// Sends a PUT request.
+        /// </summary>
+        public Task<HttpResponseWrapper> PutAsync(HttpRequestOptions options, CancellationToken cancellationToken = default)
+        {
+            options.Operation = HttpOperation.Put;
+            return SendAsync(options, cancellationToken);
+        }
+
+        /// <summary>
+        /// Sends a DELETE request.
+        /// </summary>
+        public Task<HttpResponseWrapper> DeleteAsync(HttpRequestOptions options, CancellationToken cancellationToken = default)
+        {
+            options.Operation = HttpOperation.Delete;
+            return SendAsync(options, cancellationToken);
+        }
+
+        /// <summary>
+        /// Sends a streaming request (not yet implemented).
+        /// </summary>
+        public Task<HttpResponseWrapper> SendStreamingAsync(HttpRequestOptions options, CancellationToken cancellationToken = default)
+        {
+            throw new NotImplementedException("Streaming is not yet supported.");
+        }
         private readonly HttpClient _httpClient;
 
         /// <summary>
