@@ -51,7 +51,7 @@ A robust, modular, and developer-friendly OpenRouter API client targeting .NET S
 - **Event Notification:** Extensible event system for streaming and errors
 - **Error Handling:** Custom exception hierarchy for robust error reporting
 - **SOLID Compliance:** No factories or tight coupling; everything is interface-driven and easily testable
-- **100% xUnit Coverage:** All builder and config logic is fully tested, including edge/failure cases
+- **Targetting: 100% xUnit Coverage:** All builder and config logic are / or will be fully tested, including edge/failure cases
 
 ---
 

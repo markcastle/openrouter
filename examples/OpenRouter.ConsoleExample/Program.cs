@@ -35,12 +35,20 @@ namespace OpenRouter.ConsoleExample
             );
 
             // TODO: Replace with actual request/response models
+
             var chatRequest = new ChatCompletionRequest
             {
                 Model = "gpt-3.5-turbo",
-                Messages = [ new Message { Role = "user", Content = "Hello!" } ]
+                Messages = new List<Message>
+                {
+                    new Message
+                    {
+                        Role = "user",
+                        Content = "Hello!"
+                    }
+                }
             };
-
+            
             try
             {
                 ChatCompletionResponse response = await client.SendAsync<ChatCompletionRequest, ChatCompletionResponse>(chatRequest);
