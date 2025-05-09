@@ -10,7 +10,8 @@ if (-not $coverageFile) {
 }
 
 [xml]$xml = Get-Content $coverageFile.FullName
-$lineRate = [math]::Round(($xml.coverage.'line-rate' * 100), 2)
+$rootLineRate = $xml.coverage.'line-rate'
+$lineRate = [math]::Round(([double]$rootLineRate) * 100, 2)
 
 Write-Host "Coverage: $lineRate%"
 
