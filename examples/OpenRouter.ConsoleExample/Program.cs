@@ -16,8 +16,13 @@ namespace OpenRouter.ConsoleExample
         /// <param name="args">Command-line arguments.</param>
         public static async Task Main(string[] args)
         {
-            // TODO: Replace with your actual API key
-            const string apiKey = "your-api-key";
+            // Retrieve API key from environment variable for security
+            string? apiKey = Environment.GetEnvironmentVariable("OPENROUTER_API_KEY");
+            if (string.IsNullOrWhiteSpace(apiKey))
+            {
+                Console.WriteLine("ERROR: The environment variable 'OPENROUTER_API_KEY' is not set. Please set it to your OpenRouter API key.");
+                return;
+            }
 
             OpenRouterClientBuilder builder = new OpenRouterClientBuilder()
                 .WithApiKey(apiKey)
