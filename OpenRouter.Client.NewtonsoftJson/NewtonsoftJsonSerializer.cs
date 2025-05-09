@@ -16,13 +16,25 @@ namespace OpenRouter.Client.NewtonsoftJson
     {
         private readonly JsonSerializerSettings _settings;
 
+
         /// <summary>
         /// Initializes a new instance of the <see cref="NewtonsoftJsonSerializer"/> class.
+        /// By default, uses snake_case property naming for OpenRouter API compatibility.
+        /// To use a custom naming policy or property mapping, provide a configured <see cref="JsonSerializerSettings"/>.
         /// </summary>
-        /// <param name="settings">Optional JsonSerializerSettings to customize serialization.</param>
+        /// <param name="settings">
+        /// Optional <see cref="JsonSerializerSettings"/> to customize serialization, including property naming and custom converters.
+        /// If null, the serializer will use <see cref="Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy"/> and ignore null values for OpenRouter compatibility.
+        /// </param>
         public NewtonsoftJsonSerializer(JsonSerializerSettings? settings = null)
         {
-            _settings = settings ?? new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+            // Property naming is handled here, not in model attributes. By default, use snake_case for OpenRouter compatibility.
+            _settings = settings ?? new JsonSerializerSettings {
+                NullValueHandling = NullValueHandling.Ignore,
+                ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver {
+                    NamingStrategy = new Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy()
+                }
+            };
         }
 
         /// <summary>

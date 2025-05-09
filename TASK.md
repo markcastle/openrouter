@@ -84,7 +84,10 @@ This document breaks down the development process into EPICs and individual task
 - [x] **Core-Only Abstraction:** Ensure `OpenRouter.Client.Core` only depends on `ISerializer` and never on any concrete serializer. _(2025-05-08)_
 - [x] **Update Documentation:** Document the DI registration process, platform compatibility, and custom converter usage in `README.md`. _(2025-05-08)_
 - [x] **Remove Microsoft.Extensions.DependencyInjection from NewtonsoftJson and provide Unity/manual usage guidance.** _(2025-05-08)_
-
+- [x] Remove all System.Text.Json attributes from models and ensure all serialization is handled externally (serializer config or mapping). Make models pure POCOs and JSON library agnostic. (2025-05-09)
+- [x] Configure property naming and mapping in System.Text.Json and Newtonsoft.Json adapters to match expected JSON contract (snake_case for OpenRouter). (2025-05-09)
+- [x] Add or update tests to verify serialization/deserialization for all major request/response models using System.Text.Json (snake_case). Include expected, edge, and failure cases. (2025-05-09, completed 2025-05-09)
+- [x] Add or update tests to verify serialization/deserialization for all major request/response models using Newtonsoft.Json (snake_case). Include expected, edge, and failure cases. (2025-05-09, completed 2025-05-09)
 - [x] Define NetworkException
 - [x] Create SerializationException
 - [x] Create base OpenRouterException class

@@ -8,7 +8,6 @@ namespace OpenRouter.Abstractions
         /// <summary>
         /// Gets or sets the message associated with this choice.
         /// </summary>
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
         public Message Message { get; set; } = new Message();
     }
 }

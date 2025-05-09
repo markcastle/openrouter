@@ -23,11 +23,13 @@ namespace OpenRouter.Client.SystemTextJson
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SystemTextJsonSerializer"/> class.
+        /// By default, uses snake_case property naming for OpenRouter API compatibility. To use a custom naming policy or property mapping, provide a configured <see cref="JsonSerializerOptions"/>.
         /// </summary>
-        /// <param name="options">Optional JsonSerializerOptions to customize serialization.</param>
+        /// <param name="options">Optional <see cref="JsonSerializerOptions"/> to customize serialization, including property naming and custom converters. If null, snake_case is used by default.</param>
         public SystemTextJsonSerializer(JsonSerializerOptions? options = null)
         {
-            _options = options ?? new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+            // Property naming is handled here, not in model attributes. By default, use snake_case for OpenRouter compatibility.
+            _options = options ?? new JsonSerializerOptions { PropertyNamingPolicy = new SnakeCaseJsonNamingPolicy() };
         }
 
         /// <inheritdoc/>

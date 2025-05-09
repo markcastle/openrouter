@@ -1,10 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="9.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\OpenRouter.Abstractions\OpenRouter.Abstractions.csproj" />
   </ItemGroup>
 
@@ -16,8 +12,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\OpenRouter.Client.SystemTextJson\OpenRouter.Client.SystemTextJson.csproj" />
-    <ProjectReference Include="..\OpenRouter.Client.NewtonsoftJson\OpenRouter.Client.NewtonsoftJson.csproj" />
-  </ItemGroup>
 </Project>

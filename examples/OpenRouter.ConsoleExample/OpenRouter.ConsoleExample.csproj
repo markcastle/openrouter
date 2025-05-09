@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\OpenRouter.Client.Core\OpenRouter.Client.Core.csproj" />
     <ProjectReference Include="..\..\OpenRouter.Abstractions\OpenRouter.Abstractions.csproj" />
+    <ProjectReference Include="..\..\OpenRouter.Client.SystemTextJson\OpenRouter.Client.SystemTextJson.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

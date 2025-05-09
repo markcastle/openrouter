@@ -2,12 +2,12 @@ using System;
 using System.Text.Json;
 using OpenRouter.Abstractions;
 
-namespace OpenRouter.Client.Core.Adapters
+namespace OpenRouter.Client.SystemTextJson
 {
     /// <summary>
     /// Basic implementation of ISerializer using System.Text.Json.
     /// </summary>
-    public class SystemTextJsonSerializer : ISerializer
+    public class SystemTextJsonAdapter : ISerializer
     {
         public string Serialize<T>(T obj) => JsonSerializer.Serialize(obj);
         public T Deserialize<T>(string json) => JsonSerializer.Deserialize<T>(json)!;

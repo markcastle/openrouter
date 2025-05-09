@@ -1,6 +1,7 @@
 using OpenRouter.Abstractions;
 using OpenRouter.Client.Core;
 using OpenRouter.Client.Core.Adapters;
+using OpenRouter.Client.SystemTextJson;
 
 namespace OpenRouter.ConsoleExample
 {

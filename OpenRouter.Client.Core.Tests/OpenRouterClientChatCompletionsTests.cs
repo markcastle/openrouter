@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using Moq;
 using OpenRouter.Abstractions;
-using OpenRouter.Client.Core;
-using OpenRouter.Client.Core.Adapters;
-using Xunit;
+using OpenRouter.Client.SystemTextJson;
 
 namespace OpenRouter.Client.Core.Tests
 {
@@ -21,7 +15,7 @@ namespace OpenRouter.Client.Core.Tests
             // Arrange
             var expectedContent = "{\"choices\":[{\"message\":{\"role\":\"assistant\",\"content\":\"Hi there!\"}}]}";
             var mockHttpAdapter = new Mock<IHttpClientAdapter>();
-            mockHttpAdapter.Setup(a => a.SendAsync(It.IsAny<OpenRouter.Abstractions.HttpRequestOptions>(), It.IsAny<CancellationToken>()))
+            mockHttpAdapter.Setup(a => a.SendAsync(It.IsAny<Abstractions.HttpRequestOptions>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new HttpResponseWrapper { StatusCode = 200, Content = expectedContent, ContentType = "application/json" });
 
             var serializer = new SystemTextJsonSerializer();
@@ -49,7 +43,7 @@ namespace OpenRouter.Client.Core.Tests
         {
             // Arrange
             var mockHttpAdapter = new Mock<IHttpClientAdapter>();
-            mockHttpAdapter.Setup(a => a.SendAsync(It.IsAny<OpenRouter.Abstractions.HttpRequestOptions>(), It.IsAny<CancellationToken>()))
+            mockHttpAdapter.Setup(a => a.SendAsync(It.IsAny<Abstractions.HttpRequestOptions>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new HttpResponseWrapper { StatusCode = 400, Content = "{\"error\":\"Bad Request\"}", ContentType = "application/json" });
 
             var serializer = new SystemTextJsonSerializer();
@@ -59,7 +53,7 @@ namespace OpenRouter.Client.Core.Tests
             var request = new ChatCompletionRequest { Model = "gpt-3.5-turbo", Messages = new List<Message>() };
 
             // Act & Assert
-            await Assert.ThrowsAsync<System.Net.Http.HttpRequestException>(async () => await client.CreateChatCompletionAsync(request));
+            await Assert.ThrowsAsync<HttpRequestException>(async () => await client.CreateChatCompletionAsync(request));
         }
 
         [Fact]
@@ -67,7 +61,7 @@ namespace OpenRouter.Client.Core.Tests
         {
             // Arrange
             var mockHttpAdapter = new Mock<IHttpClientAdapter>();
-            mockHttpAdapter.Setup(a => a.SendAsync(It.IsAny<OpenRouter.Abstractions.HttpRequestOptions>(), It.IsAny<CancellationToken>()))
+            mockHttpAdapter.Setup(a => a.SendAsync(It.IsAny<Abstractions.HttpRequestOptions>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(new HttpResponseWrapper { StatusCode = 200, Content = "{}", ContentType = "application/json" });
 
             var serializer = new SystemTextJsonSerializer();
