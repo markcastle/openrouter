@@ -17,6 +17,12 @@ namespace OpenRouter.Client.Core
         private readonly ISerializer _serializer;
         private readonly OpenRouterClientOptions _options;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OpenRouterClient"/> class.
+        /// </summary>
+        /// <param name="httpClientAdapter">The HTTP client adapter to use.</param>
+        /// <param name="serializer">The serializer to use.</param>
+        /// <param name="options">The client options.</param>
         public OpenRouterClient(IHttpClientAdapter httpClientAdapter, ISerializer serializer, OpenRouterClientOptions options)
         {
             _httpClientAdapter = httpClientAdapter ?? throw new ArgumentNullException(nameof(httpClientAdapter));

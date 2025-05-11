@@ -11,14 +11,27 @@ namespace OpenRouter.Client.Core.Adapters
     /// <summary>
     /// Basic implementation of IHttpClientAdapter using System.Net.Http.HttpClient.
     /// </summary>
+    /// <summary>
+    /// Basic implementation of IHttpClientAdapter using System.Net.Http.HttpClient.
+    /// </summary>
     public class BasicHttpClientAdapter : IHttpClientAdapter
     {
         private readonly HttpClient _client;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasicHttpClientAdapter"/> class.
+        /// </summary>
+        /// <param name="client">The HttpClient instance to use. If null, a new HttpClient is created.</param>
         public BasicHttpClientAdapter(HttpClient? client = null)
         {
             _client = client ?? new HttpClient();
         }
 
+        /// <summary>
+        /// Sends an HTTP request using the specified options and returns a wrapped response.
+        /// </summary>
+        /// <param name="options">The HTTP request options.</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <returns>A wrapped HTTP response.</returns>
         public async Task<HttpResponseWrapper> SendAsync(HttpRequestOptions options, CancellationToken cancellationToken = default)
         {
             var method = new HttpMethod(options.Operation.ToString());
@@ -72,6 +85,14 @@ namespace OpenRouter.Client.Core.Adapters
         }
 
         // (Optional) Keep for internal/backward compatibility
+        /// <summary>
+        /// Sends a POST request with a JSON body and optional API key.
+        /// </summary>
+        /// <param name="url">The URL to send the request to.</param>
+        /// <param name="json">The JSON content to send.</param>
+        /// <param name="apiKey">The API key for authorization (optional).</param>
+        /// <param name="cancellationToken">A cancellation token.</param>
+        /// <returns>The HTTP response message.</returns>
         public async Task<HttpResponseMessage> PostAsync(string url, string json, string? apiKey, CancellationToken cancellationToken)
         {
             var request = new HttpRequestMessage(HttpMethod.Post, url)
