@@ -24,7 +24,10 @@ namespace OpenRouter.Client.SystemTextJson
         public override string ConvertName(string name)
         {
             if (string.IsNullOrEmpty(name))
+            {
                 return name;
+            }
+
             // Convert PascalCase or camelCase to snake_case
             var snake = _regex.Replace(name, "$1_$2").ToLowerInvariant();
             return snake;

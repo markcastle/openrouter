@@ -39,8 +39,15 @@ namespace OpenRouter.Client.SystemTextJson
         public string Serialize(object value, string contentType)
         {
             if (!string.Equals(contentType, ContentType, StringComparison.OrdinalIgnoreCase))
+            {
                 throw new NotSupportedException($"Content type '{contentType}' is not supported by this handler.");
-            if (value == null) return string.Empty;
+            }
+
+            if (value == null)
+            {
+                return string.Empty;
+            }
+
             var result = _serializer.Serialize(value);
             return result ?? string.Empty;
         }
@@ -56,7 +63,10 @@ namespace OpenRouter.Client.SystemTextJson
         public object Deserialize(string content, Type type, string contentType)
         {
             if (!string.Equals(contentType, ContentType, StringComparison.OrdinalIgnoreCase))
+            {
                 throw new NotSupportedException($"Content type '{contentType}' is not supported by this handler.");
+            }
+
             if (string.IsNullOrEmpty(content))
             {
                 // Return default value for value types, null for reference types

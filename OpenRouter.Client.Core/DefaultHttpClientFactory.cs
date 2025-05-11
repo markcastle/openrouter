@@ -18,7 +18,10 @@ namespace OpenRouter.Client.Core
         public IHttpClientAdapter CreateClient()
         {
             if (_disposed)
+            {
                 throw new ObjectDisposedException(nameof(DefaultHttpClientFactory));
+            }
+
             return _adapter ??= new HttpClientAdapter();
         }
 
@@ -27,9 +30,16 @@ namespace OpenRouter.Client.Core
         /// </summary>
         public void Dispose()
         {
-            if (_disposed) return;
+            if (_disposed)
+            {
+                return;
+            }
+
             if (_adapter is IDisposable disposable)
+            {
                 disposable.Dispose();
+            }
+
             _disposed = true;
         }
     }

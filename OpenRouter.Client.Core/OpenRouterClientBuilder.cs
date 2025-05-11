@@ -89,13 +89,24 @@ namespace OpenRouter.Client.Core
         {
             // Reason: Ensures required dependencies are provided and configures the options for flexible usage.
             if (string.IsNullOrWhiteSpace(_apiKey))
+            {
                 throw new InvalidOperationException("API key must be provided.");
+            }
+
             if (string.IsNullOrWhiteSpace(_baseUrl))
+            {
                 throw new InvalidOperationException("Base URL must be provided.");
+            }
+
             if (_httpClientAdapter == null)
+            {
                 throw new InvalidOperationException("HttpClientAdapter must be provided.");
+            }
+
             if (_serializer == null)
+            {
                 throw new InvalidOperationException("Serializer must be provided.");
+            }
 
             var options = new OpenRouterClientOptions
             {

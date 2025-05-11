@@ -66,10 +66,16 @@ namespace OpenRouter.Client.SystemTextJson
             try
             {
                 if (string.IsNullOrWhiteSpace(json))
+                {
                     throw new OpenRouterSerializationException("Cannot deserialize from null or empty JSON string.");
+                }
+
                 var result = JsonSerializer.Deserialize<T>(json, _options);
                 if (result == null)
+                {
                     throw new OpenRouterSerializationException($"Deserialization returned null for type {typeof(T).Name}.");
+                }
+
                 return result;
             }
             catch (Exception ex)
@@ -90,12 +96,21 @@ namespace OpenRouter.Client.SystemTextJson
             try
             {
                 if (string.IsNullOrWhiteSpace(json))
+                {
                     throw new OpenRouterSerializationException("Cannot deserialize from null or empty JSON string.");
+                }
+
                 if (type == null)
+                {
                     throw new OpenRouterSerializationException("Target type must be provided for deserialization.");
+                }
+
                 var result = JsonSerializer.Deserialize(json, type, _options);
                 if (result == null)
+                {
                     throw new OpenRouterSerializationException($"Deserialization returned null for type {type.Name}.");
+                }
+
                 return result;
             }
             catch (Exception ex)
@@ -115,9 +130,15 @@ namespace OpenRouter.Client.SystemTextJson
             try
             {
                 if (value == null)
+                {
                     throw new OpenRouterSerializationException("Cannot serialize null value.");
+                }
+
                 if (stream == null)
+                {
                     throw new OpenRouterSerializationException("Target stream cannot be null.");
+                }
+
                 JsonSerializer.Serialize(stream, value, _options);
             }
             catch (Exception ex)
@@ -139,9 +160,15 @@ namespace OpenRouter.Client.SystemTextJson
             try
             {
                 if (value == null)
+                {
                     throw new OpenRouterSerializationException("Cannot serialize null value.");
+                }
+
                 if (stream == null)
+                {
                     throw new OpenRouterSerializationException("Target stream cannot be null.");
+                }
+
                 await JsonSerializer.SerializeAsync(stream, value, _options, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception ex)
@@ -162,10 +189,16 @@ namespace OpenRouter.Client.SystemTextJson
             try
             {
                 if (stream == null)
+                {
                     throw new OpenRouterSerializationException("Source stream cannot be null.");
+                }
+
                 var result = JsonSerializer.Deserialize<T>(stream, _options);
                 if (result == null)
+                {
                     throw new OpenRouterSerializationException($"Deserialization returned null for type {typeof(T).Name}.");
+                }
+
                 return result;
             }
             catch (Exception ex)
@@ -187,10 +220,16 @@ namespace OpenRouter.Client.SystemTextJson
             try
             {
                 if (stream == null)
+                {
                     throw new OpenRouterSerializationException("Source stream cannot be null.");
+                }
+
                 var result = await JsonSerializer.DeserializeAsync<T>(stream, _options, cancellationToken).ConfigureAwait(false);
                 if (result == null)
+                {
                     throw new OpenRouterSerializationException($"Deserialization returned null for type {typeof(T).Name}.");
+                }
+
                 return result;
             }
             catch (Exception ex)

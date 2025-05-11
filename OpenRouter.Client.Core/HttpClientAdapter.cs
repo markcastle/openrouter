@@ -70,7 +70,11 @@ namespace OpenRouter.Client.Core
         /// <inheritdoc/>
         public async Task<HttpResponseWrapper> SendAsync(HttpRequestOptions options, CancellationToken cancellationToken = default)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
             using var request = new HttpRequestMessage(ConvertMethod(options.Operation), options.Url);
 
             // Set headers
@@ -102,7 +106,9 @@ namespace OpenRouter.Client.Core
             {
                 request.Content = new StringContent(options.Body);
                 if (!string.IsNullOrEmpty(options.ContentType))
+                {
                     request.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(options.ContentType);
+                }
             }
             else if (options.BodyParameters.Any())
             {
